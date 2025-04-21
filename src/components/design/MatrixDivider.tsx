@@ -17,7 +17,7 @@ export default function MatrixDivider() {
     const randDuration = useMemo(() => Math.floor(Math.random() * 4) + 7, [] )
 
     const matrixData = useMemo(() =>
-        Array.from({ length: 50 }).map( _ => ({
+        Array.from({ length: 50 }).map( () => ({
             char: matrixChars[Math.floor(Math.random() * matrixChars.length)],
             style: getRandomStyles(),
         }))

@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import { motion } from "framer-motion"
 import { blogPosts } from "@/constants/blogPosts"
+import Image from "next/image"
 
 
 
@@ -16,7 +17,7 @@ export default function BlogSection() {
         <h2
             className="text-3xl font-bold text-glow text-center mb-6"
         >
-            // Latest Logs 📜
+             Latest Logs 📜
         </h2>
         <motion.div
             className="cursor-grab"
@@ -33,10 +34,12 @@ export default function BlogSection() {
                         key={post.id}
                         className="relative min-w-[300px] md:min-w-[400px] p-4 bg-[#121212] border border-color-neonGreen rounded-lg shadow-lg transition-transform hover:scale-105"
                     >
-                        <img 
+                        <Image 
                             className="w-full h-40 object-cover rounded-md mb-4"
                             src={post.image} 
-                            alt={post.title} 
+                            alt={post.title}
+                            width={450}
+                            height={300}
                         />
                         <h3
                             className="text-lg font-semibold text-glow"

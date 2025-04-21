@@ -21,7 +21,7 @@ export default function CommandInput ({ className }: CommandInputProps) {
 
 
   const handleCommand = (command: string) => {
-    let newHistory = [`> ${command}`]
+    const newHistory = [`> ${command}`]
   
     switch (command.toLocaleLowerCase().trim()) {
         case "help":

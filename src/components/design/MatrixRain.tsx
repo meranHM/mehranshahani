@@ -14,7 +14,7 @@ const getRandomStyles = () =>  ({
 export default function MatrixRain() {
     const randDuration = useMemo(() => Math.floor(Math.random() * 4) + 7, [] )
     const matrixData = useMemo(() =>
-            Array.from({ length: 30 }).map( _ => ({
+            Array.from({ length: 30 }).map( () => ({
                 char: matrixChars[Math.floor(Math.random() * matrixChars.length)],
                 style: getRandomStyles(),
                 animationClass: "animate-fadeIn"
