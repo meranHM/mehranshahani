@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import plugin from 'tailwindcss/plugin'
+import { fontFamily } from "tailwindcss/defaultTheme"
 
 module.exports = {
   content: [
@@ -7,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ["var(--font-mono)", ...fontFamily.mono],
+        orbit: ["var(--font-orbit)", "sans-serif"],
+      },
       colors: {
         color: {
           cyberBlack: "#0A0F1D",
