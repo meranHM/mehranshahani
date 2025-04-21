@@ -1,16 +1,22 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from "next"
+import { JetBrains_Mono, Orbitron } from "next/font/google"
+import "./globals.css"
+import ClientLayout from "@/components/ClientLayout"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
-});
+  display: "swap",
+  style: ["normal", "italic"],
+  variable: "--font-mono",
+})
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-orbit"
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${jetBrains.variable} ${orbitron.variable} antialiased`}
       >
-        {children}
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );
