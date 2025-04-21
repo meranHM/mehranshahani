@@ -14,11 +14,20 @@ const getRandomStyle = () => ({
     hasShadow: Math.random() > 0.5,
 })
 
+type BinaryItemType = {
+    id: number
+    top: number
+    left: number
+    fontSize: number
+    opacity: number
+    hasShadow: boolean
+    value: string
+}
 
 
 export default function BinaryBackground() {
     const [mounted, setMounted] = useState<boolean>(false)
-    const [binaryArray, setBinaryArray] = useState<any[]>([])
+    const [binaryArray, setBinaryArray] = useState<BinaryItemType[]>([])
 
     const containerRef = useRef<HTMLDivElement>(null)
     const binaryRefs = useRef<(HTMLSpanElement | null)[]>([])
@@ -38,7 +47,7 @@ export default function BinaryBackground() {
     useEffect(() => {
         let frame: number
         const animate = () => {
-            binaryRefs.current.forEach((el, i) => {
+            binaryRefs.current.forEach((el) => {
                 if (!el) return
                 if (Math.random() > 0.98) {
                     el.textContent = getRandomValues()

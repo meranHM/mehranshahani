@@ -87,7 +87,7 @@ export default function Header() {
                 <span className="w-1 h-1 bg-yellow-500 rounded-full"></span>
                 <span className="w-1 h-1 bg-green-500 rounded-full"></span>
               </div>
-              <MenuSvg openNavigation={openNavigation} />
+              <MenuSvg />
             </button>
         </div>
 
