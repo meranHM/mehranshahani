@@ -37,26 +37,30 @@ export default function MatrixDivider() {
 
 
   return (
-    <motion.div
-        className="w-full py-10 overflow-hidden text-color-neonGreen text-sm font-mono tracking-wide flex space-x-2 whitespace-nowrap"
-        initial={{ x: "100%" }}
-        animate={{ x: "-100%" }}
-        transition={{ repeat: Infinity, duration: randDuration, ease: "linear" }}
+    <div
+        className="w-full overflow-hidden"
     >
-        {matrixData.map((char, index) => (
-            <span
-                key={index}
-                style={{
-                    fontSize: `${char.fontSize}px`,
-                    opacity: `${char.opacity}`,
-                    textShadow: char.hasShadow
-                        ? "0px 0px 6px rgba(0, 255, 0, 0.5)"
-                        : "none"
-                }}
-            >
-                {char.value}
-            </span>
-        ))}
-    </motion.div>
+        <motion.div
+            className="py-10 text-color-neonGreen text-sm font-mono tracking-wide flex space-x-2 whitespace-nowrap"
+            initial={{ x: "100%" }}
+            animate={{ x: "-100%" }}
+            transition={{ repeat: Infinity, duration: randDuration, ease: "linear" }}
+        >
+            {matrixData.map((char, index) => (
+                <span
+                    key={index}
+                    style={{
+                        fontSize: `${char.fontSize}px`,
+                        opacity: `${char.opacity}`,
+                        textShadow: char.hasShadow
+                            ? "0px 0px 6px rgba(0, 255, 0, 0.5)"
+                            : "none"
+                    }}
+                >
+                    {char.value}
+                </span>
+            ))}
+        </motion.div>
+    </div>
   )
 }

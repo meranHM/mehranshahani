@@ -50,11 +50,6 @@ import {
         <FadeInSection
           className="mt-28 py-28"
         >
-          <MiniTerminal 
-            message={miniTerminalMessageCTA}
-            anchor="#CTA"
-            className="mb-6 md:mb-8"
-          />
           <CTASection />
         </FadeInSection>
   

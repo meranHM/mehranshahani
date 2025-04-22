@@ -6,7 +6,7 @@ export default function Hero() {
       id="hero"
     >
       <div
-        className="relative overflow-hidden w-[80vw] max-w-[900px] h-[400px] mx-auto bg-color-cyberBlack rounded-lg shadow-tv flex items-center"
+        className="relative overflow-hidden w-[80vw] max-w-[900px] h-[400px] mx-auto font-orbit bg-color-cyberBlack rounded-lg shadow-tv flex items-center"
       >
         <div className="tv-noise"></div>
         <h1

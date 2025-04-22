@@ -29,7 +29,7 @@ export default function ContatcPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        📡 SIGNAL ONLINE – Ready to establish communication.
+        📡 SIGNAL ONLINE - Ready to establish communication.
       </motion.div>
 
       <motion.form

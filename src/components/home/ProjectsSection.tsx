@@ -37,7 +37,7 @@ export default function ProjectsSection() {
       )}
 
       <div
-        className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 text-color-neonGreen text-xs md:text-sm lg:-text-lg font-bold text-center"
+        className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 text-color-neonGreen text-xs md:text-sm lg:-text-lg font-bold text-center text-nowrap"
       >
         {project.title}
       </div>
