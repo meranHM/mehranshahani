@@ -28,7 +28,7 @@ export default function MatrixDivider() {
 
     // Generating initial matrix letter elements
     useEffect(() => {
-        const initialMatrixData = Array.from({ length: NUM_ITEMS }).map( (_, i) => ({
+        const initialMatrixData = Array.from({ length: NUM_ITEMS }).map( () => ({
             ...getRandomStyles(),
             value: getRandomChar(),
         }))

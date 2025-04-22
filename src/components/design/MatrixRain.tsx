@@ -28,7 +28,7 @@ export default function MatrixRain() {
 
   // Generating initial matrix letter elements
   useEffect(() => {
-    const initialMatrixData = Array.from({ length: NUM_ITEM }).map((_, i) => ({
+    const initialMatrixData = Array.from({ length: NUM_ITEM }).map(() => ({
       value: getRandomChar(),
       ...getRandomStyles(),
       animationClass: "animate-fadeIn"
