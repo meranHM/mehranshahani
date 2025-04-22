@@ -3,11 +3,12 @@
 import { useState, useEffect, useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { skillSet, logs } from "@/constants"
+import ProgressBar from "./ProgressBar"
 
 
 export default function SkillSet() {
     const [logIndex, setLogIndex] = useState<number>(0)
-    const [scanComplete, setScanCompelete] = useState<boolean>(false)
+    const [scanComplete, setScanComplete] = useState<boolean>(false)
     
     const containerRef = useRef(null)
     const isInview = useInView(containerRef, { once: true, margin: "-100px" })
@@ -17,7 +18,7 @@ export default function SkillSet() {
             if (logIndex < logs.length - 1) {
                 setTimeout(() => setLogIndex(logIndex + 1), 300)
             } else {
-                setTimeout(() => setScanCompelete(true), 700)
+                setTimeout(() => setScanComplete(true), 700)
             }
         }
     }, [logIndex, isInview])
@@ -31,9 +32,12 @@ export default function SkillSet() {
             className="overflow-hidden h-5 relative"
         >
             <motion.div
-                className="absolute top-0 left-0 w-full h-5 bg-color-neonGreen/40"
-                animate={{ y: [0, 100, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                className="absolute top-0 left-0 w-full h-5 bg-color-neonGreen/40 pointer-events-none"
+                animate={{ 
+                    y: [0, "100%"],
+                    opacity: [0, 1, 0]
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
         </div>
         <pre 
@@ -55,11 +59,10 @@ export default function SkillSet() {
                     >
                         {skill.name}
                     </p>
-                    <motion.div
-                        className={`h-4 ${skill.color} rounded`}
-                        initial={{ width: 0 }}
-                        animate={{ width: scanComplete ? `${skill.level}%` : 0 }}
-                        transition={{ duration: 1.5, delay: index * 0.3 }}
+                    <ProgressBar 
+                        level={skill.level}
+                        color={skill.color}
+                        delay={index * 0.3}
                     />
                 </div>
             ))}

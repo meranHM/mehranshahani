@@ -15,20 +15,22 @@ export default function CommandOutput( { className }: CommandOutputProps ) {
   }
 
   return (
-    <div 
+    <ul 
       className="scanline mt-2 p-3"
     >
       {commandHistory.map((item, index) => (
-        <motion.p 
+        <motion.li 
           key={index}
           initial="hidden"
           animate="visible"
           variants={SuggestionVariants}
           className={`${item.startsWith("Suggestions") ? "text-blue-400" : ""} text-xs md:text-lg mt-2 ${className || ""}`}
+          role="listitem"
+          aria-label={item}
         >
           {item}
-        </motion.p>
+        </motion.li>
       ))}
-    </div>
+    </ul>
   )
 }

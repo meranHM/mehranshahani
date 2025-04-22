@@ -8,7 +8,7 @@ export default function GlitchEffect({className, children, id}: GlitchEffectProp
   
   useEffect(() => {
     const applyGlitchEffect = () => {
-      const element = document.getElementById("hasGlitch")
+      const element = document.getElementById(id)
 
       if (!element) return
 
@@ -23,16 +23,16 @@ export default function GlitchEffect({className, children, id}: GlitchEffectProp
     }
 
     applyGlitchEffect()
-  },[])
+  },[id])
 
   const renderPre = () => (
-    <pre className={className} id="hasGlitch">
+    <pre className={className} id={id}>
       {children}
     </pre>
   )
 
   const renderParagraph = () => (
-      <p className={className} id="hasGlitch">
+      <p className={className} id={id}>
         {children}
       </p>
   )

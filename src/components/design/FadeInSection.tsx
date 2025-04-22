@@ -14,16 +14,15 @@ export default function FadeInSection({ children, className }: FadeInSectionProp
   }
 
   return (
-    <motion.div
+    <motion.section
         ref={ref}
         className={`${className || ""}`}
         variants={fadeInVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        transition={{ duration: 0.6 }}
         viewport={{ once: true, amount: 0.3 }}
     >
         {children}
-    </motion.div>
+    </motion.section>
   )
 }

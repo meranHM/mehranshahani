@@ -1,14 +1,21 @@
-import { ReactNode } from "react"
+import { 
+  ReactNode, 
+  FormEvent,
+  KeyboardEvent,
+  ChangeEvent
+} from "react"
+
+
 
 export interface GlitchEffectProps {
     className?: string
     children: ReactNode
-    id?: string
+    id: string
   }
 
 export interface CommandInputProps {
-  handleKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void
-  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void
+  handleChange?: (e: ChangeEvent<HTMLInputElement>) => void
   userInput?: string
   className?: string
 }
@@ -30,6 +37,12 @@ export interface MiniTerminalProps {
 export interface FadeInSectionProps {
   children: ReactNode
   className?: string
+}
+
+export interface ProgressBarProps {
+  level: number
+  color: string
+  delay: number
 }
 
 export interface GlitchTransitionProps {
@@ -64,6 +77,9 @@ export interface HeaderTerminalProps {
   className?: string
 }
 
+export interface ContactFormProps {
+  handleSubmit: (e: FormEvent<HTMLFormElement>) => void
+}
 
 
 

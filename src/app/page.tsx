@@ -1,13 +1,8 @@
-"use client"
-
 import MainTerminal from "@/components/landing/MainTerminal"
 import { MovingBackground } from "@/components/design/MovingBackground"
-import { useRef } from "react"
 
 
 export default function LandingPage() {
-  const parallaxRef = useRef<HTMLElement>(null)
-
   return (
     <section 
       className="container h-screen relative overflow-hidden"
@@ -18,9 +13,7 @@ export default function LandingPage() {
       >
         <MainTerminal />
       </div>
-      <MovingBackground 
-        parallaxRef={parallaxRef}
-      />
+      <MovingBackground />
   </section>
   )
 }

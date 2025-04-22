@@ -31,7 +31,7 @@ module.exports = {
           neonDeepBlue: "#003BFF",
           terminalBlack: "#080F0F",
           terminalHeader: "#101617",
-          footerBlack: "#0a0f1df2",
+          footerBlack: "#0A0F1DF2",
         },
       },
       boxShadow: {
@@ -46,6 +46,8 @@ module.exports = {
         fadeIn: "fadeIn 1.5s ease-in-out infinite",
         retroShake: "retroShake 0.3s infinite",
         retroFlicker: "retroFlicker 0.12s infinite",
+        textFlicker: "textFlicker 3s infinite",
+        pulseBorder: "pulseBorder 3s infinite",
       },
       keyframes: {
         starEffect: {
@@ -82,6 +84,18 @@ module.exports = {
         retroFlicker: {
           "0%, 100%": { opacity: "0.02" },
           "50%": { opacity: "0.06" }
+        },
+        textFlicker: {
+          "0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%": {
+              opacity: "1"
+          },
+          "20%, 24%, 55%": {
+            opacity: "0.4"
+          },
+        },
+        pulseBorder: {
+          "0%, 100%": { boxShadow: "0 0 12px #0ff5, inset 0 0 8px #ff2"},
+          "50%": { boxShadow: "0 0 20px #0ff9, inset 0 0 12px #0ff4" },
         }
       },
     },

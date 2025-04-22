@@ -107,6 +107,8 @@ export default function CommandInput ({ className }: CommandInputProps) {
         type="text"
         className="w-full bg-transparent caret-inherit text-color-neonGreen outline-none pl-2"
         placeholder="Enter command..."
+        aria-label="Terminal command input"
+        role="textbox"
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         value={userInput}

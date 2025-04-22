@@ -24,12 +24,13 @@ export default function CTASection() {
             </h2>
 
             <div
-                className="w-full flex flex-wrap justify-center gap-6 md:gap-24 my-6"
+                className="w-full flex flex-wrap justify-center gap-6 md:gap-24 my-8 md:my-6"
             >
                 <motion.a
                     href="/contact"
                     className="cta-btn border-color-neonPink text-color-neonPink hover:bg-color-neonPink/20 cursor-pointer z-50"
                     whileHover={{ scale: 1.05 }}
+                    aria-label="Hire Mehran"
                 >
                 🚀 Hire Me
                 </motion.a>
@@ -38,6 +39,7 @@ export default function CTASection() {
                     href="/projects"
                     className="cta-btn border-color-neonGreen text-color-neonGreen hover:bg-color-neonGreen/20 cursor-pointer z-50"
                     whileHover={{ scale: 1.05 }}
+                    aria-label="Check Mehran's work"
                 >
                     🔥 Check My Work
                 </motion.a>
@@ -47,6 +49,7 @@ export default function CTASection() {
                     download
                     className="cta-btn border-color-neonBlue hover:bg-color-neonBlue/20 cursor-pointer z-50"
                     whileHover={{ scale: 1.05 }}
+                    aria-label="Download Mehran's resume"
                 >
                     📄 Download My Resume
                 </motion.a>

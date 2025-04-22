@@ -3,6 +3,7 @@
 import { projects } from "@/constants/highlightProjects"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 
 export default function ProjectsSection() {
@@ -16,8 +17,11 @@ export default function ProjectsSection() {
       onMouseEnter={ () => setHovered(index) }
       onMouseLeave={ () => setHovered(null) }
       onClick={ () => window.open(project.liveDemo, "_blank") }
+      onKeyDown={(e) => e.key === "Enter" && window.open(project.liveDemo, "_blank")}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open project: ${project.title}`}
     >
-
       <div className="tv-noise"></div>
 
       { hovered === index ? (
@@ -26,12 +30,15 @@ export default function ProjectsSection() {
           autoPlay
           loop
           muted
+          playsInline
           className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
         />
       ) : (
-        <img
+        <Image
           src={project.thumbnail}
           alt={project.title}
+          width={450}
+          height={450}
           className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
         />
       )}

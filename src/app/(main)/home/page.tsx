@@ -2,7 +2,6 @@ import {
     miniTerminalMessageHero, 
     miniTerminalMessageSkills, 
     miniTerminalMessageProjects,
-    miniTerminalMessageCTA,
     miniTerminalMessageBlog } from "@/constants"
   import MiniTerminal from "@/components/design/MiniTerminal"
   import Hero from "@/components/home/Hero"
