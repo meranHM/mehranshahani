@@ -1,6 +1,6 @@
 "use client"
 
-import { projects } from "@/constants/projects"
+import { projects } from "@/constants/highlightProjects"
 import { useState } from "react"
 import { motion } from "framer-motion"
 

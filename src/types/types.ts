@@ -43,7 +43,12 @@ export interface ProjectCategory {
     thumbnail: string
     liveDemo: string
     repo: string
-    video: string
+    video?: string
+    featured?: boolean
+}
+
+export interface ProjectCardProps {
+  project: ProjectCategory
 }
 
 export interface CategorySectionProps {

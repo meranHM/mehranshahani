@@ -1,5 +1,5 @@
 import CategorySection from "@/components/projects/CategorySection"
-import { projectsObj } from "@/constants/projects"
+import { allProjects } from "@/data/projects/allProjects"
 import FadeInSection from "@/components/design/FadeInSection"
 
 
@@ -9,42 +9,42 @@ export default function ProjectsPage() {
     <FadeInSection className="mb-20">
       <CategorySection 
         title={"Portfolio"} 
-        projects={projectsObj.portfolio}
+        projects={allProjects.portfolio}
       />
     </FadeInSection>
 
     <FadeInSection className="mb-20">  
       <CategorySection 
         title={"SaaS"} 
-        projects={projectsObj.saas}
+        projects={allProjects.saas}
       />
     </FadeInSection>
 
     <FadeInSection className="mb-20">
       <CategorySection 
         title={"E-commerce"} 
-        projects={projectsObj.ecommerce}
+        projects={allProjects.ecommerce}
       />
     </FadeInSection>
 
     <FadeInSection className="mb-20"> 
       <CategorySection 
         title={"Dashboard"} 
-        projects={projectsObj.dashboards}
+        projects={allProjects.dashboard}
       />
     </FadeInSection> 
 
     <FadeInSection className="mb-20"> 
       <CategorySection 
         title={"Web Apps"} 
-        projects={projectsObj.webapps}
+        projects={allProjects.webapp}
       />
     </FadeInSection>
 
     <FadeInSection className="mb-20">  
       <CategorySection 
         title={"Landing Pages"} 
-        projects={projectsObj.landings}
+        projects={allProjects.landing}
       />
 
     </FadeInSection>
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
     <FadeInSection className="mb-20">
       <CategorySection 
         title={"Fun and Experimental"} 
-        projects={projectsObj.fun}
+        projects={allProjects.fun}
       />
     </FadeInSection>
     </>
