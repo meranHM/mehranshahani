@@ -7,7 +7,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <motion.div
             className="relative w-64 h-52 bg-black border border-green-400 rounded-lg cursor-pointer hover:shadow-md hover:shadow-color-neonGreen transition duration-75"
-            whileHover={{ scale: 1.05, rotate: 1 }}
+            whileHover={{ scale: 1.05, rotate: 0.5 }}
+            tabIndex={0}
+            role="button"
+            aria-label={`Open project: ${project.title}`}
+            onKeyDown={(e) => {if (e.key === "Enter") window.open(project.liveDemo, "_blank")}}
         >
             <div
                 className="flex items-center justify-between px-3 py-2 bg-color-terminalHeader border-b border-color-neonGreen rounded-t-lg"

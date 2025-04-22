@@ -10,12 +10,12 @@ export default function ProjectCarousel({ projects }: ProjectsCarouselProps) {
 
   return (
     <motion.div
-        className="cursor-grab z-[999]"
+        className="cursor-grab z-40"
         ref={sliderRef}
         whileTap={{ cursor: "grabbing" }}
     >
         <motion.div
-            className="flex space-x-10"
+            className="flex space-x-10 z-40"
             drag="x"
             dragConstraints={{ left: -400 , right: 400}}
         >

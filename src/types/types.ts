@@ -45,6 +45,13 @@ export interface ProgressBarProps {
   delay: number
 }
 
+export interface BlogPostCardProps {
+  image: string
+  title: string
+  excerpt: string
+  url: string
+}
+
 export interface GlitchTransitionProps {
   children: ReactNode
 }
