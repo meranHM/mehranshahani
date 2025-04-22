@@ -9,6 +9,5 @@ export const dashboard: ProjectCategory[] = [
         liveDemo: "https://example.com",
         repo: "https://github.com/meranHM/my-website",
         video: "/projects/cyberpunk-portfolio/thumbnail.png",
-        tag: [""]
     },
 ]

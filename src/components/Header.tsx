@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header 
-        className={`fixed top-0 left-0 w-full z-[999] md:py-2 ${openNavigation ? "bg-color-terminalBlack" : "backdrop-blur-md bg-[#08121C]/80 shadow-[0px_0px_10px_2px_rgba(0,255,128,0.3)]"}`}
+        className={`fixed top-0 left-0 w-full z-[10000] md:py-2 ${openNavigation ? "bg-color-terminalBlack" : "backdrop-blur-md bg-[#08121C]/80 shadow-[0px_0px_10px_2px_rgba(0,255,128,0.3)]"}`}
     >
         <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
             <Link

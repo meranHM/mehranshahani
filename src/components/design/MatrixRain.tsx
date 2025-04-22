@@ -1,25 +1,41 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useMemo } from "react"
+import { useMemo, useEffect, useState } from "react"
 
+
+const NUM_ITEM = 30
 const matrixChars = "01A3B4CDEFGH56789!@#$%^&*"
 
+const getRandomChar = () => matrixChars[Math.floor(Math.random() * matrixChars.length)]
 const getRandomStyles = () =>  ({
-    fontSize: `${Math.floor(Math.random() * 16) + 6}px`,
+    fontSize: Math.floor(Math.random() * 16) + 6,
     opacity: Math.random() * 0.2 + 0.4,
-    textShadow: Math.random() > 0.5 ? "0px 0px 6px rgba(0, 255, 0, 0.5)" : "none",
+    hasShadow: Math.random() > 0.5,
 })
 
+type matrixDataType = {
+  fontSize: number
+  opacity: number
+  hasShadow: boolean
+  value: string
+  animationClass: string
+}
+
 export default function MatrixRain() {
-    const randDuration = useMemo(() => Math.floor(Math.random() * 4) + 7, [] )
-    const matrixData = useMemo(() =>
-            Array.from({ length: 30 }).map( () => ({
-                char: matrixChars[Math.floor(Math.random() * matrixChars.length)],
-                style: getRandomStyles(),
-                animationClass: "animate-fadeIn"
-            }))
-        ,[])
+  const [matrixData, setMatrixData] = useState<matrixDataType[]>([])
+  const randDuration = useMemo(() => Math.floor(Math.random() * 4) + 7, [])
+
+  // Generating initial matrix letter elements
+  useEffect(() => {
+    const initialMatrixData = Array.from({ length: NUM_ITEM }).map((_, i) => ({
+      value: getRandomChar(),
+      ...getRandomStyles(),
+      animationClass: "animate-fadeIn"
+    }))
+    setMatrixData(initialMatrixData)
+  }, [])
+
 
   return (
     <motion.div
@@ -32,12 +48,19 @@ export default function MatrixRain() {
         ease: "linear",
       }}
     >
-        {matrixData.map((data, index) => (
+        {matrixData.map((char, index) => (
             <span
                 key={index}
-                style={data.style}
+                style={{
+                  fontSize: `${char.fontSize}px`,
+                  animation: `${char.animationClass}`,
+                  opacity: `${char.opacity}`,
+                  textShadow: char.hasShadow
+                    ? "0px 0px 6px rgba(0, 255, 0, 0.5)"
+                    : "none"
+                }}
             >
-                {data.char}
+                {char.value}
             </span>
         ))}
     </motion.div>
