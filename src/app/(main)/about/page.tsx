@@ -9,8 +9,9 @@ export default function AboutPage() {
   return (
     <section className="relative z-[888]">
       <FadeInSection
-        className="md:mt-20 md:py-20"
+        className="mb-48 mt-44 md:mt-20 md:py-20"
       >
+        <h1 className="sr-only">About Mehran Shahani</h1>
         <SystemProfile />
       </FadeInSection>
 

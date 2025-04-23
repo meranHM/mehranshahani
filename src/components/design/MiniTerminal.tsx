@@ -15,7 +15,7 @@ export default function MiniTerminal({message, anchor, className}: MiniTerminalP
           </span>
       </div>
       <div 
-        className="py-2 px-7 overflow-hidden terminal-glow scanline"
+        className="py-3 px-6 overflow-hidden terminal-glow scanline"
       >
         <pre className="text-wrap text-xs md:text-lg animate-textFlicker">
           {message}

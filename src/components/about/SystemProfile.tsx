@@ -6,8 +6,9 @@ import { motion } from "framer-motion"
 export default function SystemProfile() {
   return (
     <motion.section
-        className="relative max-w-3xl mx-auto p-6 bg-color-terminalBlack border border-color-neonGreen rounded-lg shadow-lg overflow-hidden text-color-neonGreen text-sm md:text-lg tracking-wider"
+        className="relative max-w-3xl mx-auto p-3 md:p-6 bg-color-terminalBlack border border-color-neonGreen rounded-lg shadow-lg overflow-hidden text-color-neonGreen text-sm md:text-lg tracking-wider"
     >
+        <h2 className="sr-only">User System Profile</h2>
         <motion.div
             className="absolute inset-0 bg-black/80 flex items-center justify-center text-center text-color-neonGreen text-lg md:text-2xl font-bold"
             initial={{ opacity: 1 }}
@@ -19,7 +20,7 @@ export default function SystemProfile() {
 
         <motion.img 
             src="/avatar.png"
-            alt="User Avatar"
+            alt="Avatar of Mehran Shahani"
             className="w-32 h-32 mx-auto rounded-full border-2 border-color-neonGreen shadow-lg"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}

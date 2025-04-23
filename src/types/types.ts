@@ -52,6 +52,12 @@ export interface BlogPostCardProps {
   url: string
 }
 
+export interface SkillCardProps {
+    category: string
+    items: string[]
+    status: string
+}
+
 export interface GlitchTransitionProps {
   children: ReactNode
 }
