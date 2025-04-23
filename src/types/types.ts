@@ -84,7 +84,6 @@ export interface TimelineItemProps {
   year: string
   title: string
   description: string
-  index: number
   future?: boolean
 }
 

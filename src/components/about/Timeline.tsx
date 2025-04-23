@@ -18,7 +18,6 @@ export default function Timeline() {
                     title={item.title}
                     description={item.description}
                     future={item.future}
-                    index={index}
                 />
             ))}
         </div>

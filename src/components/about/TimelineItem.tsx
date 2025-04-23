@@ -4,7 +4,7 @@ import { useInView, motion } from "framer-motion"
 import { useRef } from "react"
 import { TimelineItemProps } from "@/types/types"
 
-export default function TimelineItem({ year, title, description, index, future }: TimelineItemProps) {
+export default function TimelineItem({ year, title, description, future }: TimelineItemProps) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: false, margin: "-50% 0px -50% 0px" })
 
