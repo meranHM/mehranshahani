@@ -52,12 +52,6 @@ export interface BlogPostCardProps {
   url: string
 }
 
-export interface SkillCardProps {
-    category: string
-    items: string[]
-    status: string
-}
-
 export interface GlitchTransitionProps {
   children: ReactNode
 }
@@ -84,6 +78,14 @@ export interface CategorySectionProps {
 
 export interface ProjectsCarouselProps {
   projects: ProjectCategory[]
+}
+
+export interface TimelineItemProps {
+  year: string
+  title: string
+  description: string
+  index: number
+  future?: boolean
 }
 
 export interface HeaderTerminalProps {
