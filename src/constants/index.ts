@@ -1,4 +1,4 @@
-
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"
 
 //Header NavBar
 export const navigation = [
@@ -148,7 +148,7 @@ export const skillSet = [
     { name: "Tailwind CSS", level: 90, color: "bg-color-neonTeal/60" },
     { name: "Framer Motion", level: 78, color: "bg-color-neonViolet/60" },
     { name: "Git & GitHub", level: 88, color: "bg-color-neonRed/60" },
-  ]
+]
 
 export const logs = [
     "Initializing system scan...",
@@ -158,16 +158,23 @@ export const logs = [
     "Compiling system performance report...",
     "Optimization complete.",
     "STATUS: STABLE.",
-  ]
+]
 
 
 // My Developer Timeline
 export const timelineData = [
-  { year: "2013-2015", title: "Early Interests", description: "Fascinated by tech, explored coding basics and digital design.", future: false },
-  { year: "2022", title: "Frontend Foundations", description: "Started learning HTML, CSS, and JavaScript. Built first simple projects.", future: false },
-  { year: "2023-2024", title: "React & Advanced Tech", description: "Mastered React, Redux, TypeScript, and Tailwind CSS. Created real projects.", future: false },
-  { year: "2025", title: "Current Status", description: "Building a strong portfolio, selling templates, and seeking opportunities.", future: false },
-  { year: "Future", title: "Next Mission: Backend Mastery", description: "Planning to learn Next.js, databases, and full-stack development.", future: true }
-]  
+    { year: "2013-2015", title: "Early Interests", description: "Fascinated by tech, explored coding basics and digital design.", future: false },
+    { year: "2022", title: "Frontend Foundations", description: "Started learning HTML, CSS, and JavaScript. Built first simple projects.", future: false },
+    { year: "2023-2024", title: "React & Advanced Tech", description: "Mastered React, Redux, TypeScript, and Tailwind CSS. Created real projects.", future: false },
+    { year: "2025", title: "Current Status", description: "Building a strong portfolio, selling templates, and seeking opportunities.", future: false },
+    { year: "Future", title: "Next Mission: Backend Mastery", description: "Planning to learn Next.js, databases, and full-stack development.", future: true }
+]
+
+// Contact Information
+export const contactData = [
+    { icon: FaLinkedin, link: ""},
+    { icon: FaGithub, link: "#"},
+    { icon: FaEnvelope, link: "mailto:mehranshahani6@gmail.com"},
+]
 
 

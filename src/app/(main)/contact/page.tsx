@@ -2,17 +2,23 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"
+import { contactData } from "@/constants"
 import MatrixRain from "@/components/design/MatrixRain"
 import ContactForm from "@/components/contact/ContactForm"
 
-export default function ContatcPage() {
+export default function ContactPage() {
   const [messageSent, setMessageSent] = useState(false)
+  const [isPending, setIsPending] = useState<boolean>(false)
 
   const handleSendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setMessageSent(true)
-    setTimeout(() => setMessageSent(false), 3000)
+    setIsPending(true)
+
+    setTimeout(() => {
+      setIsPending(false)
+      setMessageSent(true)
+      setTimeout(() => setMessageSent(false), 3000)
+    }, 1000)
   }
 
   return (
@@ -34,12 +40,21 @@ export default function ContatcPage() {
 
       <ContactForm 
         handleSubmit={handleSendMessage}
+        isPending={isPending}
       />
 
-      {messageSent && <div className="mt-4 text-green-300">✅ Transmission Sent Successfully.</div>}
+      {messageSent && 
+        <motion.div 
+          className="mt-4 text-green-300"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 10 }}
+        >
+          ✅ Transmission Sent Successfully.
+        </motion.div>
+      }
 
       <div className="flex space-x-6 mt-8">
-        {[{icon: FaLinkedin, link: "#"}, {icon: FaGithub, link: "#"}, {icon: FaEnvelope, link: "#"}].map((item, index) => (
+        {contactData.map((item, index) => (
           <motion.a
             key={index}
             href={item.link}

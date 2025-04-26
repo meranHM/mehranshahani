@@ -42,12 +42,13 @@ module.exports = {
       },
       animation: {
         starEffect: "starEffect 10s infinite ease-in-out forwards",
-        tvGlitch: "vhsStyle 1.5s infinite steps(5), signalLoss 10s infinite",
+        vhsStyle: "vhsStyle 1.5s infinite steps(5), signalLoss 10s infinite",
         fadeIn: "fadeIn 1.5s ease-in-out infinite",
         retroShake: "retroShake 0.3s infinite",
         retroFlicker: "retroFlicker 0.12s infinite",
         textFlicker: "textFlicker 3s infinite",
         pulseBorder: "pulseBorder 3s infinite",
+        glitch: "glitch 0.3s ease-in-out infinite",
       },
       keyframes: {
         starEffect: {
@@ -96,6 +97,14 @@ module.exports = {
         pulseBorder: {
           "0%, 100%": { boxShadow: "0 0 12px #0ff5, inset 0 0 8px #ff2"},
           "50%": { boxShadow: "0 0 20px #0ff9, inset 0 0 12px #0ff4" },
+        },
+        glitch: {
+        "0%": { transform: "translate(0)" },
+        "20%": { transform: "translate(-2px, 2px)" },
+        "40%": { transform: "translate(2px, -2px)" },
+        "60%": { transform: "translate(-1px, 1px)" },
+        "80%": { transform: "translate(1px, -1px)" },
+        "100%": { transform: "translate(0)" },
         }
       },
     },

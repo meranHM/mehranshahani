@@ -93,6 +93,7 @@ export interface HeaderTerminalProps {
 
 export interface ContactFormProps {
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void
+  isPending: boolean
 }
 
 
