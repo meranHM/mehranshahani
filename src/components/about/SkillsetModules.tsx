@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { skills } from "@/constants"
+import { skills } from "@/data"
 import SkillCard from "@/components/about/SkillCard"
 
 

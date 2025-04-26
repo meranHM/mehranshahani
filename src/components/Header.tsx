@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { navigation } from "../constants"
+import { navigation } from "../data"
 import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll"
 import {  useState } from "react"
 import { HamburgerMenu } from "./HamburgerMenu"
@@ -54,23 +54,26 @@ export default function Header() {
             <nav
               className={`${openNavigation ? "flex" : "hidden"} fixed top-[5rem] left-0 right-0 bottom-0 mt-5 lg:static lg:flex lg:mx-auto lg:mt-0`}
             >
-              <div
+              <ul
                 className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row"
               >
                 {navigation.map(item => (
-                  <Link
+                  <li
                     key={item.id}
-                    href={item.url}
-                    onClick={handleClick}
-                    className={`block relative text-2xl uppercase z-[999] transition-colors hover:glitch px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-sm lg:font-semibold lg:leading-5 xl:px-12 ${item.url === location
-                      ? "z-2 lg:text-color-neonCyan"
-                      : "lg: text-gray-500"
-                    } `}
                   >
-                    {item.title}
-                  </Link>
+                    <Link
+                      href={item.url}
+                      onClick={handleClick}
+                      className={`block relative text-2xl uppercase z-[999] transition-colors hover:textGlitch px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-sm lg:font-semibold lg:leading-5 xl:px-12 ${item.url === location
+                        ? "z-2 lg:text-color-neonCyan"
+                        : "lg: text-gray-500"
+                      } `}
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <HamburgerMenu />
             </nav>
 

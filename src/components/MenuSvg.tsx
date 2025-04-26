@@ -9,7 +9,7 @@ export default function MenuSvg() {
   fill="#D400FF"
 >
   <text
-    className="transition-all origin-center text-glow hover:glitch"
+    className="transition-all origin-center text-glow hover:textGlitch"
     x="50%"
     y="50%"
     textAnchor="middle"

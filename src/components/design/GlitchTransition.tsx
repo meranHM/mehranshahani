@@ -13,7 +13,7 @@ export default function GlitchTransition() {
         className="fixed top-0 left-0 w-full h-full bg-black z-40 flex items-center justify-center overflow-clip transition-all"
     >
         <div className="glitch-container">
-            <span className="glitch-text">LOADING...</span>
+            <span className="textGlitch">LOADING...</span>
         </div>
     </motion.div>
   )

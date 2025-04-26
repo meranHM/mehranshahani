@@ -1,7 +1,7 @@
 "use client"
 
 import { useDispatch } from "react-redux"
-import { deactivateRetro } from "@/lib/slices/retroSlice"
+import { deactivateRetro } from "@/lib/store/slices/retroSlice"
 
 const RetroVersion = () => {
   const dispatch = useDispatch()

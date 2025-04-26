@@ -7,7 +7,7 @@ import { BlogPostCardProps } from "@/types/types"
 export default function BlogPostCard({ image, title, excerpt, url }: BlogPostCardProps) {
     return (
         <div
-            className="flex flex-col md:flex-row gap-6 p-4 bg-color-cyberBlack border border-color-neonGreen rounded-lg shadow-lg hover:scale-[1.02] hover:animate-pulseBorder transition-transform"
+            className="flex flex-col md:flex-row overflow-hidden gap-6 p-4 bg-color-cyberBlack border border-color-neonGreen rounded-lg shadow-lg hover:scale-[1.02] hover:animate-pulseBorder transition-transform"
         >
             <Image 
                 className="max-w-80 h-auto object-cover rounded-md self-center"

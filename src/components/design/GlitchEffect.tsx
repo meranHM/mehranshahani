@@ -12,10 +12,10 @@ export default function GlitchEffect({className, children, id}: GlitchEffectProp
 
       if (!element) return
 
-      element.classList.add("glitch")
+      element.classList.add("textGlitch")
 
       setTimeout(() => {
-        element.classList.remove("glitch")
+        element.classList.remove("textGlitch")
       }, 1000)
 
       const nextTime = Math.random() * 5000 + 5000

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { contactData } from "@/constants"
+import { contactData } from "@/data"
 import MatrixRain from "@/components/design/MatrixRain"
 import ContactForm from "@/components/contact/ContactForm"
 

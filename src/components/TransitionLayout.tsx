@@ -1,7 +1,7 @@
 "use client"
 
 import { useSelector } from "react-redux"
-import { RootState } from "@/lib/store"
+import { RootState } from "@/lib/store/store"
 import { AnimatePresence } from "framer-motion"
 import GlitchTransition from "./design/GlitchTransition"
 import RetroTransition from "./design/RetroTransition"

@@ -11,14 +11,14 @@ export default function CTASection() {
         transition={{ duration: 1 }}
     >
         <div
-            className="relative w-full max-w-7xl h-96 flex flex-col justify-between items-center p-6 rounded-lg bg-opacity-10 backdrop-blur-lg border border-color-neonCyan shadow-lg shadow-color-neonCyan/30"
+            className="relative w-full max-w-7xl min-h-96 flex flex-col justify-between items-center p-6 rounded-lg bg-opacity-10 backdrop-blur-lg border border-color-neonCyan shadow-lg shadow-color-neonCyan/30"
         >
             <div
                 className="absolute inset-0 bg-gradient-to-b from-transparent via-color-neonCyan/10 to-transparent scanline"
             ></div>
 
             <h2
-                className="mt-10 text-2xl md:text-4xl font-bold text-color-neonCyan tracking-wider glitch"
+                className="mt-10 text-2xl md:text-4xl font-bold text-color-neonCyan tracking-wider textGlitch"
             >
                 Want to build something epic together?
             </h2>

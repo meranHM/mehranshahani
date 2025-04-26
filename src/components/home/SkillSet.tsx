@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { skillSet, logs } from "@/constants"
+import { skillSet, logs } from "@/data"
 import ProgressBar from "./ProgressBar"
 
 

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { FadeInSectionProps } from "@/types/types"
-import useInView from "@/hooks/useInView"
+import useInView from "@/lib/hooks/useInView"
 
 
 export default function FadeInSection({ children, className }: FadeInSectionProps) {

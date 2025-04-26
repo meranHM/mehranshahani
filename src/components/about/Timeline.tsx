@@ -1,4 +1,4 @@
-import { timelineData } from "@/constants"
+import { timelineData } from "@/data"
 import TimelineItem from "./TimelineItem"
 
 export default function Timeline() {

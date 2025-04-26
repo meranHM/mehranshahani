@@ -1,5 +1,3 @@
-"use client"
-
 import { ReactNode } from "react"
 import PageWrapper from "./PageWrapper"
 import { ReduxProvider } from "@/app/providers"

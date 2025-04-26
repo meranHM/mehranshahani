@@ -2,14 +2,14 @@
 
 import { CommandInputProps } from "../types/types"
 import { useSelector, useDispatch } from "react-redux"
-import { RootState } from "@/lib/store"
+import { RootState } from "@/lib/store/store"
 import { 
   setUserInput,
   addCommandToHistory,
   clearHistory
-} from "@/lib/slices/terminalSlice"
-import { startRetroTransition } from "@/lib/slices/retroSlice"
-import { commands } from "../constants"
+} from "@/lib/store/slices/terminalSlice"
+import { startRetroTransition } from "@/lib/store/slices/retroSlice"
+import { commands } from "../data"
 import { useRouter } from "next/navigation"
 
 

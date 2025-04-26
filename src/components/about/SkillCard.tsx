@@ -1,6 +1,6 @@
 "use client"
 
-import { skills } from "@/constants"
+import { skills } from "@/data"
 import { motion } from "framer-motion"
 
 export default function SkillCard({ skill }: { skill: string }) {

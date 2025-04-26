@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { activateRetro } from "@/lib/slices/retroSlice"
+import { activateRetro } from "@/lib/store/slices/retroSlice"
 import RetroFlicker from "./RetroFlicker"
 
 export default function RetroTransition() {

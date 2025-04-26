@@ -1,4 +1,4 @@
-import { blogPosts } from "@/constants/blogPosts"
+import { blogPosts } from "@/data/blogPosts"
 import BlogPostCard from "./BlogPostCard"
 
 

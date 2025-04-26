@@ -172,12 +172,12 @@
     }
   }
 
-  .glitch {
+  .textGlitch {
     position: relative;
-    animation: glitch 0.5s infinite alternate;
+    animation: textGlitch 0.5s infinite alternate;
   }
 
-  @keyframes glitch {
+  @keyframes textGlitch {
     0% {
       text-shadow: 2px 2px 0px #00ffcc, -2px -2px 0px #ff00ff;
     }

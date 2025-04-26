@@ -1,10 +1,10 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
-import { useTypewriter } from '@/hooks/useTypewriter'
+import { useTypewriter } from '@/lib/hooks/useTypewriter'
 import { useSelector } from "react-redux"
-import { RootState } from "@/lib/store"
-import { asciiArt, allWelcomeMessages } from "@/constants"
+import { RootState } from "@/lib/store/store"  
+import { asciiArt, allWelcomeMessages } from "@/data"
 import GlitchEffect from "@/components/design/GlitchEffect"
 import TerminalNavbar from "@/components/landing/TerminalNavbar"
 import CommandInput from "@/components/CommandInput"

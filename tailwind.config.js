@@ -105,7 +105,7 @@ module.exports = {
         "60%": { transform: "translate(-1px, 1px)" },
         "80%": { transform: "translate(1px, -1px)" },
         "100%": { transform: "translate(0)" },
-        }
+        },
       },
     },
   },
