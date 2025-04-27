@@ -1,9 +1,9 @@
 "use client"
 
-import CommandInput from "./CommandInput"
+import CommandInput from "../CommandInput"
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
-import CommandOutput from "./CommandOutput"
+import CommandOutput from "../CommandOutput"
 import { useSelector } from "react-redux"
 import { RootState } from "@/lib/store/store"
 import { HeaderTerminalProps } from "@/types/types"

@@ -2,11 +2,11 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { navigation } from "../data"
+import { navigation } from "@/data/index"
 import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll"
 import {  useState } from "react"
 import { HamburgerMenu } from "./HamburgerMenu"
-import MenuSvg from "@/components/MenuSvg"
+import MenuSvg from "@/components/header/MenuSvg"
 import HeaderTerminal from "./HeaderTerminal"
 
 
@@ -64,7 +64,7 @@ export default function Header() {
                     <Link
                       href={item.url}
                       onClick={handleClick}
-                      className={`block relative text-2xl uppercase z-[999] transition-colors hover:textGlitch px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-sm lg:font-semibold lg:leading-5 xl:px-12 ${item.url === location
+                      className={`block relative text-2xl uppercase z-50 transition-colors hover:textGlitch px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-sm lg:font-semibold lg:leading-5 xl:px-12 ${item.url === location
                         ? "z-2 lg:text-color-neonCyan"
                         : "lg: text-gray-500"
                       } `}
