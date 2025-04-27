@@ -14,6 +14,6 @@ export default function LandingPage() {
         <MainTerminal />
       </div>
       <MovingBackground />
-  </section>
+    </section>
   )
 }

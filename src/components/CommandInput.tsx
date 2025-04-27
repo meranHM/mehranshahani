@@ -11,6 +11,7 @@ import {
 import { startRetroTransition } from "@/lib/store/slices/retroSlice"
 import { commands } from "../data"
 import { useRouter } from "next/navigation"
+import { useRef } from "react"
 
 
 
@@ -18,6 +19,7 @@ export default function CommandInput ({ className }: CommandInputProps) {
   const userInput = useSelector((state: RootState) => state.terminal.userInput)
   const dispatch = useDispatch()
   const router = useRouter()
+  const inputRef = useRef<HTMLInputElement>(null)
 
 
   const handleCommand = (command: string) => {
@@ -40,6 +42,7 @@ export default function CommandInput ({ className }: CommandInputProps) {
         case "retro":
           const wrapper = document.getElementById("app-wrapper")
           document.body.classList.add("bg-white")
+          inputRef.current?.blur()
           if (wrapper) {
             wrapper.classList.add("animate-retroShake")
           }
@@ -103,7 +106,8 @@ export default function CommandInput ({ className }: CommandInputProps) {
     id="command-input"
 >
     <span className="text-neonGreen"></span>
-    <input 
+    <input
+        ref={inputRef}
         type="text"
         className="w-full bg-transparent caret-inherit text-color-neonGreen outline-none pl-2"
         placeholder="Enter command..."
