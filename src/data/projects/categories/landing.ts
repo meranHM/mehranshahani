@@ -1,4 +1,4 @@
-import { ProjectCategory } from "@/types/types"
+/* import { ProjectCategory } from "@/types/types"
 
 export const landing: ProjectCategory[] = [
     {
@@ -28,4 +28,4 @@ export const landing: ProjectCategory[] = [
         repo: "https://github.com/meranHM/my-website",
         video: "/projects/cyberpunk-portfolio/thumbnail.png",
     },
-]
+] */

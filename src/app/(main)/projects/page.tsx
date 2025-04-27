@@ -26,35 +26,6 @@ export default function ProjectsPage() {
         projects={allProjects.ecommerce}
       />
     </FadeInSection>
-
-    <FadeInSection className="mb-20"> 
-      <CategorySection 
-        title={"Dashboard"} 
-        projects={allProjects.dashboard}
-      />
-    </FadeInSection> 
-
-    <FadeInSection className="mb-20"> 
-      <CategorySection 
-        title={"Web Apps"} 
-        projects={allProjects.webapp}
-      />
-    </FadeInSection>
-
-    <FadeInSection className="mb-20">  
-      <CategorySection 
-        title={"Landing Pages"} 
-        projects={allProjects.landing}
-      />
-
-    </FadeInSection>
-
-    <FadeInSection className="mb-20">
-      <CategorySection 
-        title={"Fun and Experimental"} 
-        projects={allProjects.fun}
-      />
-    </FadeInSection>
     </>
   )
 }

@@ -1,54 +1,57 @@
 "use client"
 
-import { projects } from "@/data/projects/highlightProjects"
+import { featuredProjects } from "@/data/projects/highlightProjects"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 
 
 export default function ProjectsSection() {
   const [hovered, setHovered] = useState<number | null >(null)
 
-  const projectElements = projects.map((project, index) => (
-    <motion.div
+  const projectElements = featuredProjects.map((project, index) => (
+    <Link
       key={index}
-      className="relative w-full aspect-square cursor-pointer z-50 overflow-hidden bg-color-cyberBlack rounded-lg shadow-tv"
-      whileHover={{ scale: 1.05 }}
-      onMouseEnter={ () => setHovered(index) }
-      onMouseLeave={ () => setHovered(null) }
-      onClick={ () => window.open(project.liveDemo, "_blank") }
-      onKeyDown={(e) => e.key === "Enter" && window.open(project.liveDemo, "_blank")}
-      role="button"
-      tabIndex={0}
-      aria-label={`Open project: ${project.title}`}
+      href={`/projects/${project.id}`}
     >
-      <div className="tv-noise"></div>
-
-      { hovered === index ? (
-        <video 
-          src={project.video}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
-        />
-      ) : (
-        <Image
-          src={project.thumbnail}
-          alt={project.title}
-          width={450}
-          height={450}
-          className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
-        />
-      )}
-
-      <div
-        className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 text-color-neonGreen text-xs md:text-sm lg:-text-lg font-bold text-center text-nowrap"
+      <motion.div
+        className="relative w-full aspect-square cursor-pointer z-50 overflow-hidden bg-color-cyberBlack rounded-lg shadow-tv"
+        whileHover={{ scale: 1.05 }}
+        onMouseEnter={ () => setHovered(index) }
+        onMouseLeave={ () => setHovered(null) }
+        role="button"
+        tabIndex={0}
+        aria-label={`Open project: ${project.title}`}
       >
-        {project.title}
-      </div>
-    </motion.div>
+        <div className="tv-noise"></div>
+
+        { hovered === index ? (
+          <video 
+            src={project.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
+          />
+        ) : (
+          <Image
+            src={project.thumbnail}
+            alt={project.title}
+            width={450}
+            height={450}
+            className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
+          />
+        )}
+
+        <div
+          className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 text-color-neonGreen text-xs md:text-sm lg:-text-lg font-bold text-center text-nowrap"
+        >
+          {project.title}
+        </div>
+      </motion.div>
+    </Link>
   ))
 
   return (

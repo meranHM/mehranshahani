@@ -57,6 +57,7 @@ export interface GlitchTransitionProps {
 }
 
 export interface ProjectCategory {
+    id: string
     title: string
     description: string
     techStack: string[]
