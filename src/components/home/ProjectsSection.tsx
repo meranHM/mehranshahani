@@ -1,6 +1,6 @@
 "use client"
 
-import { featuredProjects } from "@/data/projects/highlightProjects"
+import { projects } from "@/data/projects"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
@@ -10,7 +10,7 @@ import Link from "next/link"
 export default function ProjectsSection() {
   const [hovered, setHovered] = useState<number | null >(null)
 
-  const projectElements = featuredProjects.map((project, index) => (
+  const projectElements = projects.map((project, index) => (
     <Link
       key={index}
       href={`/projects/${project.id}`}
