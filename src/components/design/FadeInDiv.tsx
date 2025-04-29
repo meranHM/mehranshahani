@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { FadeInSectionProps } from "@/types/types"
 
 
-export default function FadeInSection({ children, className }: FadeInSectionProps) {
+export default function FadeInDiv({ children, className }: FadeInSectionProps) {
 
   const fadeInVariants = {
       hidden: { opacity: 0, y: 40 },
@@ -12,13 +12,13 @@ export default function FadeInSection({ children, className }: FadeInSectionProp
   }
 
   return (
-    <motion.section
+    <motion.div
         className={`${className || ""}`}
         variants={fadeInVariants}
         initial="hidden"
         animate="visible"
     >
         {children}
-    </motion.section>
+    </motion.div>
   )
 }

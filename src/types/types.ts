@@ -5,7 +5,10 @@ import {
   ChangeEvent
 } from "react"
 
-
+export interface TerminalProps {
+  children: ReactNode
+  className?: string
+}
 
 export interface GlitchEffectProps {
     className?: string

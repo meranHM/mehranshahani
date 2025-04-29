@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <Link
-            href={`/projects/${project.title}`}
+            href={`/projects/${project.id}`}
         >
             <motion.div
                 className="relative w-64 h-52 bg-black border border-green-400 rounded-lg cursor-pointer hover:shadow-md hover:shadow-color-neonGreen transition duration-75"
