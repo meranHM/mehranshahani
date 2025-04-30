@@ -8,6 +8,7 @@ import {
 export interface TerminalProps {
   children: ReactNode
   className?: string
+  anchor?: string
 }
 
 export interface GlitchEffectProps {

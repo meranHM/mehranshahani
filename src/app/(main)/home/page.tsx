@@ -14,7 +14,7 @@ import BlogSection from "@/components/home/BlogSection"
   
   export default function HomePage() {
     return (
-      <section className="relative">
+      <div className="container relative">
         <ScrollFadeInSection
           className="pb-20 mb-28"
         >
@@ -62,7 +62,7 @@ import BlogSection from "@/components/home/BlogSection"
           />
           <BlogSection />
         </ScrollFadeInSection>
-      </section>
+      </div>
     )
   }
   

@@ -35,7 +35,7 @@ export default function ContactForm({ handleSubmit, isPending }: ContactFormProp
 
     return (
             <motion.form
-                className="bg-gray-900 p-6 rounded-lg shadow-lg border border-green-500 w-full max-w-md z-50"
+                className="bg-gray-900 p-4 md:p-6 rounded-lg shadow-lg border border-green-500 w-full max-w-md z-50"
                 onSubmit={onSubmit}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
