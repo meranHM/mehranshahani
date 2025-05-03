@@ -1,9 +1,8 @@
-import { ProjectCategory } from "@/types/types"
-
+import { Project } from "@/types/types"
 
 
 // Highlight Projects
-export const projects: ProjectCategory[] = [
+export const projects: Project[] = [
     {
         id: "cyberpunk-portfolio",
         title: "Cyberpunk Portfolio",

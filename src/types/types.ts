@@ -60,29 +60,27 @@ export interface GlitchTransitionProps {
   children: ReactNode
 }
 
-export interface ProjectCategory {
-    id: string
-    title: string
-    description: string
-    techStack: string[]
-    thumbnail: string
-    liveDemo: string
-    repo: string
-    video?: string
-    featured?: boolean
-}
-
-export interface ProjectCardProps {
-  project: ProjectCategory
-}
-
-export interface CategorySectionProps {
-  projects: ProjectCategory[]
+export interface Project {
+  id: string
   title: string
+  description: string
+  techStack: string[]
+  thumbnail: string
+  liveDemo: string
+  repo: string
+  video: string
 }
 
-export interface ProjectsCarouselProps {
-  projects: ProjectCategory[]
+export interface ProjectSectionProps {
+  index: number
+  position: number
+  title: string
+  description: string
+  thumbnail: string
+}
+
+export interface AirplaneProps {
+  position: number
 }
 
 export interface TimelineItemProps {

@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         mono: ["var(--font-mono)", ...fontFamily.mono],
         orbit: ["var(--font-orbit)", "sans-serif"],
+        press: ["var(--font-press)", "monospace"],
       },
       colors: {
         color: {
