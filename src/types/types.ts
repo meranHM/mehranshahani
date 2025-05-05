@@ -71,6 +71,11 @@ export interface Project {
   video: string
 }
 
+export interface ProjectCardProps {
+  title: string
+  textureSrc: string
+}
+
 export interface ProjectSectionProps {
   index: number
   position: number

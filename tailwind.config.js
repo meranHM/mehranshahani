@@ -50,6 +50,7 @@ module.exports = {
         textFlicker: "textFlicker 3s infinite",
         pulseBorder: "pulseBorder 3s infinite",
         glitch: "glitch 0.3s ease-in-out infinite",
+        twinkle: "twinkle 4s infinite ease-in-out",
       },
       keyframes: {
         starEffect: {
@@ -106,6 +107,10 @@ module.exports = {
         "60%": { transform: "translate(-1px, 1px)" },
         "80%": { transform: "translate(1px, -1px)" },
         "100%": { transform: "translate(0)" },
+        },
+        twinkle: {
+          "0%, 100%": { opacity: "0.1" },
+          "50%": { opacity: "0.3" },
         },
       },
     },

@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from "react"
 import { projects } from "@/data/projects"
 import { useRouter} from "next/navigation"
-import ProjectSection from "@/components/projects/ProjectSection"
 import Airplane from "@/components/projects/Airplane"
+import ProjectCard from "@/components/projects/ProjectCard"
+import Background from "@/components/projects/Background"
 
 
 export default function ProjectsPage() {
@@ -43,21 +44,19 @@ export default function ProjectsPage() {
     <section
       className="w-screen h-screen relative overflow-hidden bg-gradient-to-b from-color-cyberBlack to-black text-color-neonGreen font-press"
     >
+      <Background />
       <div
         ref={containerRef}
         className="h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
       >
         {projects.map((project, index) => (
           <div
-            key={project.id}
+            key={index}
             className="min-w-full snap-start flex items-center justify-center"
           >
-            <ProjectSection 
+            <ProjectCard 
               title={project.title}
-              description={project.description}
-              thumbnail={project.thumbnail}
-              index={index}
-              position={position}
+              textureSrc={`/pixel-planet${index + 1}.png`}
             />
           </div>
         ))}

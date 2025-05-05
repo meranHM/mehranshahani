@@ -15,7 +15,7 @@ export const projects: Project[] = [
     },
     {
         id: "focusframe-portfolio",
-        title: "FOCUSFRAME Portfolio",
+        title: "FOCUSFRAME",
         description: "A classy and minimal portfolio for visual experts",
         techStack: ["React", "Tailwind CSS", "TypeScript"],
         thumbnail: "/projects/cyberpunk-portfolio/thumbnail.png",
