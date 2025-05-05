@@ -6,13 +6,26 @@ import { useRouter} from "next/navigation"
 import Airplane from "@/components/projects/Airplane"
 import ProjectCard from "@/components/projects/ProjectCard"
 import Background from "@/components/projects/Background"
+import InfoModal from "@/components/projects/InfoModal"
 
 
 export default function ProjectsPage() {
   const [position, setPosition] = useState<number>(0)
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   
   const containerRef = useRef<HTMLDivElement>(null)
 
+  // Showing an info modal on page load
+  useEffect(() => {
+    if (!isModalOpen) {
+      setIsModalOpen(true)
+    }
+  }, [])
+
+  // Info modal buttons
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
 
   // Handling scrolls
   useEffect(() => {
@@ -44,6 +57,11 @@ export default function ProjectsPage() {
     <section
       className="w-screen h-screen relative overflow-hidden bg-gradient-to-b from-color-cyberBlack to-black text-color-neonGreen font-press"
     >
+      {isModalOpen && (
+        <InfoModal 
+          closeModal={() => closeModal()}
+        />
+      )}
       <Background />
       <div
         ref={containerRef}
