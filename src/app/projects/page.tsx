@@ -135,12 +135,12 @@ export default function ProjectsPage() {
 
       <div
         ref={containerRef}
-        className="h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
+        className="w-full h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide touch-pan-x overscroll-x-none"
       >
         {projects.map((project, index) => (
           <div
             key={index}
-            className="min-w-full snap-start flex items-center justify-center"
+            className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
           >
             <ProjectCard 
               title={project.title}

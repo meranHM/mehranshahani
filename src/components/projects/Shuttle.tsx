@@ -8,7 +8,7 @@ import Image from "next/image"
 export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttleProps) {
     return (
         <motion.div
-            className="fixed left-1/2 bottom-44 pointer-events-none"
+            className="fixed left-1/2 bottom-28 md:bottom-44 pointer-events-none"
             animate={{
                 y: isShuttleMoving ? [-4, 4, -4] : 0,
                 scaleX: isShuttleForward ? 1 : -1,
