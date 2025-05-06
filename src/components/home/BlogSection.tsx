@@ -1,6 +1,5 @@
 import { blogPosts } from "@/data/blogPosts"
 import BlogPostCard from "./BlogPostCard"
-import Link from "next/link"
 
 
 export default function BlogSection() {

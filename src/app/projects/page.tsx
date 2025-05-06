@@ -92,11 +92,10 @@ export default function ProjectsPage() {
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [position, projects.length])
+  }, [position])
 
   // Handling arrow buttons
   const prevProject = () => navigateProjects("prev")
-
   const nextProject = () => navigateProjects("next")
 
   return (

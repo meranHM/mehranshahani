@@ -49,7 +49,7 @@ export default function InfoModal({ closeModal }: InfoModalProps) {
                         checked={dontShowToday}
                         onChange={() => setDontShowToday(!dontShowToday)}
                     />
-                    Don't show again today
+                    Don&apos;t show again today
                 </label>
 
                 <div
