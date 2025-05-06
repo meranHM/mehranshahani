@@ -62,8 +62,9 @@ export default function ProjectsPage() {
   const navigateProjects = (direction: "next" | "prev") => {
     if (isMovingRef.current) return
 
-    isMovingRef.current = true
     setIsShuttleMoving(true)
+    isMovingRef.current = true
+    
 
     setTimeout(() => {
       isMovingRef.current = false

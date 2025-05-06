@@ -8,7 +8,7 @@ import Image from "next/image"
 export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttleProps) {
     return (
         <motion.div
-            className="fixed left-1/2 -translate-x-1/2 bottom-28 pointer-events-none"
+            className="fixed left-1/2 bottom-44 pointer-events-none"
             animate={{
                 y: isShuttleMoving ? [-4, 4, -4] : 0,
                 scaleX: isShuttleForward ? 1 : -1,
@@ -19,11 +19,11 @@ export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttlePr
             }}
         >
             <div
-                className="relative w-28 h-28"
+                className="relative w-28 h-28 flex items-center justify-center"
             >
                 {isShuttleMoving && (
                     <motion.div
-                        className="absolute -left-10 top-7"
+                        className="absolute -left-12 top-7"
                         animate={{ y: [0, 5, 0], opacity: [1, 0.6, 1] }}
                         transition={{ duration: 0.4, repeat: Infinity }}
                     >
@@ -42,7 +42,7 @@ export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttlePr
                     alt="Space shuttle"
                     width={250}
                     height={250}
-                    className="w-28 h-28"
+                    className="w-28 h-28 z-10"
                 />
             </div>
         </motion.div>
