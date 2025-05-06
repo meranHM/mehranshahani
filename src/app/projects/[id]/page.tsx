@@ -5,7 +5,7 @@ interface ProjectDetailsProps {
     params: { id: string }
 }
 
-export default async function ProjectDetails({ params }: ProjectDetailsProps ) {
+export default function ProjectDetails({ params }: ProjectDetailsProps ) {
     const project = projects.find((project) => project.id === params.id)
 
     if (!project) return notFound()
