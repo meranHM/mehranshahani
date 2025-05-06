@@ -7,7 +7,7 @@ import Timeline from "@/components/about/Timeline"
 
 export default function AboutPage() {
   return (
-    <section className="relative z-[888]">
+    <div className="container relative z-50">
       <ScrollFadeInSection
         className="mb-48 mt-44 md:mt-20 md:py-20"
       >
@@ -32,6 +32,6 @@ export default function AboutPage() {
       >
         <Timeline />
       </ScrollFadeInSection>
-    </section>
+    </div>
   )
 }

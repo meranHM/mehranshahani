@@ -44,7 +44,7 @@ export default function MainTerminal() {
             className="max-w-4xl"
         >
             <div 
-                className="p-4 max-h-[80dvh] min-h-[400px] overflow-y-auto terminal-glow"
+                className="p-4 max-h-[80dvh] min-h-[400px] overflow-y-auto"
                 ref={outputRef}
                 id="terminal-message"
             >

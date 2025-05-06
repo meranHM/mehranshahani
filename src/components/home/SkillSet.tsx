@@ -8,7 +8,7 @@ import ProgressBar from "./ProgressBar"
 
 export default function SkillSet() {
     const [logIndex, setLogIndex] = useState<number>(0)
-    const [scanComplete, setScanComplete] = useState<boolean>(false)
+
     
     const containerRef = useRef(null)
     const isInview = useInView(containerRef, { once: true, margin: "-100px" })
@@ -17,8 +17,6 @@ export default function SkillSet() {
         if (isInview) {
             if (logIndex < logs.length - 1) {
                 setTimeout(() => setLogIndex(logIndex + 1), 300)
-            } else {
-                setTimeout(() => setScanComplete(true), 700)
             }
         }
     }, [logIndex, isInview])
@@ -67,13 +65,6 @@ export default function SkillSet() {
                 </div>
             ))}
         </div>
-        {scanComplete && isInview && (
-            <p
-                className="text-color-neonGreen text-center mt-2 md:mt-4 text-sm md:text-lg font-bold"
-            >
-                SYSTEM STABLE ⚡
-            </p>
-        )}
     </div>
   )
 }

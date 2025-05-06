@@ -2,12 +2,14 @@ import {
   ReactNode, 
   FormEvent,
   KeyboardEvent,
-  ChangeEvent
+  ChangeEvent,
+  RefObject
 } from "react"
 
 export interface TerminalProps {
   children: ReactNode
   className?: string
+  anchor?: string
 }
 
 export interface GlitchEffectProps {
@@ -59,29 +61,34 @@ export interface GlitchTransitionProps {
   children: ReactNode
 }
 
-export interface ProjectCategory {
-    id: string
-    title: string
-    description: string
-    techStack: string[]
-    thumbnail: string
-    liveDemo: string
-    repo: string
-    video?: string
-    featured?: boolean
+export interface Project {
+  id: string
+  title: string
+  description: string
+  techStack: string[]
+  thumbnail: string
+  liveDemo: string
+  repo: string
+  video: string
 }
 
 export interface ProjectCardProps {
-  project: ProjectCategory
-}
-
-export interface CategorySectionProps {
-  projects: ProjectCategory[]
+  id: string
   title: string
+  textureSrc: string
 }
 
-export interface ProjectsCarouselProps {
-  projects: ProjectCategory[]
+export interface ShuttleProps {
+  isShuttleMoving: boolean
+  isShuttleForward: boolean
+}
+
+export interface InfoModalProps {
+  closeModal: (dontShowToday?: boolean) => void
+}
+
+export interface AirplaneProps {
+  position: number
 }
 
 export interface TimelineItemProps {

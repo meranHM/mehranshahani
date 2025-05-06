@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { JetBrains_Mono, Orbitron } from "next/font/google"
+import { JetBrains_Mono, Orbitron, Press_Start_2P } from "next/font/google"
 import "./globals.css"
 import ClientLayout from "@/components/ClientLayout"
 
@@ -14,7 +14,14 @@ const jetBrains = JetBrains_Mono({
 const orbitron = Orbitron({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-orbit"
+  variable: "--font-orbit",
+})
+
+const pressStart2P = Press_Start_2P({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+  variable: "--font-press-start",
 })
 
 
@@ -31,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jetBrains.variable} ${orbitron.variable} antialiased`}
+        className={`${jetBrains.variable} ${orbitron.variable} ${pressStart2P.variable} antialiased`}
       >
         <ClientLayout>
           {children}

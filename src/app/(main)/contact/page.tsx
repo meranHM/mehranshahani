@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { contactData } from "@/data"
 import MatrixRain from "@/components/design/MatrixRain"
 import ContactForm from "@/components/contact/ContactForm"
+import Terminal from "@/components/design/Terminal"
 
 export default function ContactPage() {
   const [messageSent, setMessageSent] = useState(false)
@@ -23,53 +24,61 @@ export default function ContactPage() {
 
   return (
     <div
-      className=" relative min-h-screen bg-[#06080a] text-green-400 flex flex-col items-center justify-center p-8 z-50 overflow-hidden"
+      className="container"
     >
-      <div className="absolute left-5 top-0 h-full w-10 flex flex-col">
-        <MatrixRain />
-      </div>
-
-      <motion.div
-        className="text-lg text-center mb-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+      <Terminal
+        anchor="contact"
       >
-        📡 SIGNAL ONLINE - Ready to establish communication.
-      </motion.div>
-
-      <ContactForm 
-        handleSubmit={handleSendMessage}
-        isPending={isPending}
-      />
-
-      {messageSent && 
-        <motion.div 
-          className="mt-4 text-green-300"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 10 }}
+        <div
+          className="relative min-h-screen text-green-400 flex flex-col items-center justify-center z-50 overflow-hidden"
         >
-          ✅ Transmission Sent Successfully.
-        </motion.div>
-      }
+          <div className="absolute left-5 top-0 h-full w-10 flex flex-col">
+            <MatrixRain />
+          </div>
 
-      <div className="flex space-x-6 mt-8">
-        {contactData.map((item, index) => (
-          <motion.a
-            key={index}
-            href={item.link}
-            className="text-green-400 text-3xl hover:text-green-300 transition duration-200 z-[50]"
+          <motion.div
+            className="text-lg text-center mb-6"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.2, delay: index * 0.2 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
           >
-            <item.icon />
-          </motion.a>
-        ))}
-      </div>
-      <div className="absolute right-0 top-0 h-full w-10 flex flex-col">
-        <MatrixRain />
-      </div>
+            📡 SIGNAL ONLINE - Ready to establish communication.
+          </motion.div>
+
+          <ContactForm 
+            handleSubmit={handleSendMessage}
+            isPending={isPending}
+          />
+
+          {messageSent && 
+            <motion.div 
+              className="mt-4 text-green-300"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 10 }}
+            >
+              ✅ Transmission Sent Successfully.
+            </motion.div>
+          }
+
+          <div className="flex space-x-6 mt-8">
+            {contactData.map((item, index) => (
+              <motion.a
+                key={index}
+                href={item.link}
+                className="text-green-400 text-3xl hover:text-green-300 transition duration-200 z-[50]"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.2, delay: index * 0.2 }}
+              >
+                <item.icon />
+              </motion.a>
+            ))}
+          </div>
+          <div className="absolute right-0 top-0 h-full w-10 flex flex-col">
+            <MatrixRain />
+          </div>
+        </div>
+      </Terminal>
     </div>
   )
 }

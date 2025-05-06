@@ -5,11 +5,11 @@ import { MovingBackground } from "@/components/design/MovingBackground"
 export default function LandingPage() {
   return (
     <section 
-      className="container h-screen relative overflow-hidden"
+      className="h-screen relative overflow-hidden"
       id="landing"
     >
       <div 
-        className="flex flex-col items-center justify-center h-full"
+        className="container flex flex-col items-center justify-center h-full"
       >
         <MainTerminal />
       </div>

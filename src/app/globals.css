@@ -5,6 +5,7 @@
 :root {
   --font-mono: "JetBrains Mono", monospace;
   --font-orbit: "Orbitron", sans-serif;
+  --font-press: "Press Start 2P", monospace;
   color-scheme: dark;
 }
 
@@ -13,7 +14,7 @@
 }
 
 @layer base {
-  body {
+  body, html {
     @apply font-mono bg-color-cyberBlack text-color-neonCyan text-base;
   }
 }
@@ -67,6 +68,10 @@
 
   .text-glow {
     text-shadow: 0 0 5px #D400FF;
+  }
+
+  .pixelated {
+    image-rendering: pixelated;
   }
 
   .skill-card {

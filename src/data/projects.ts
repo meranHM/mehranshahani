@@ -1,9 +1,8 @@
-import { ProjectCategory } from "@/types/types"
-
+import { Project } from "@/types/types"
 
 
 // Highlight Projects
-export const featuredProjects: ProjectCategory[] = [
+export const projects: Project[] = [
     {
         id: "cyberpunk-portfolio",
         title: "Cyberpunk Portfolio",
@@ -16,7 +15,7 @@ export const featuredProjects: ProjectCategory[] = [
     },
     {
         id: "focusframe-portfolio",
-        title: "FOCUSFRAME Portfolio",
+        title: "FOCUSFRAME",
         description: "A classy and minimal portfolio for visual experts",
         techStack: ["React", "Tailwind CSS", "TypeScript"],
         thumbnail: "/projects/cyberpunk-portfolio/thumbnail.png",

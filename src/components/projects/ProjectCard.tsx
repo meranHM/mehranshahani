@@ -2,35 +2,66 @@
 
 import { motion } from "framer-motion"
 import { ProjectCardProps } from "@/types/types"
-import Link from "next/link"
+import { useRouter } from "next/navigation"
+import Image from "next/image"
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ id, title, textureSrc }: ProjectCardProps) {
+    const router = useRouter()
+
+    const handleClick = () => {
+        router.push(`projects/${id}`)
+    }
+
     return (
-        <Link
-            href={`/projects/${project.id}`}
+        <motion.div
+            whileHover={{ scale: 1.05, rotate: 2 }}
+            className="relative w-48 h-48 p-2 rounded-full border-4 border-indigo-500/30 shadow-lg shadow-indigo-500/20 bg-color-terminalBlack cursor-pointer group"
+            onClick={handleClick}
         >
+
+            <div
+                className="relative w-full h-full rounded-full overflow-hidden z-10"
+            >
+                {/* Rings */}
+                <div className="absolute inset-0 rounded-full border-2 border-indigo-500/40 animate-pulse blur-sm z-10" />
+
+                {/* Texture */}
+                <Image 
+                    src={textureSrc}
+                    alt={title}
+                    fill
+                    className="object-cover pixelated z-0"
+                    style={{ zIndex: 1 }}
+                />
+            </div>
+
+            {/* Title */}
             <motion.div
-                className="relative w-64 h-52 bg-black border border-green-400 rounded-lg cursor-pointer hover:shadow-md hover:shadow-color-neonGreen transition duration-75"
-                whileHover={{ scale: 1.05, rotate: 0.5 }}
-                tabIndex={0}
-                role="button"
-                aria-label={`Open project: ${project.title}`}
-                onKeyDown={(e) => {if (e.key === "Enter") window.open(project.liveDemo, "_blank")}}
+                animate={{ rotate: 360 }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear",
+                }}
+                className="absolute inset-0 z-20 pointer-events-none"
             >
                 <div
-                    className="flex items-center justify-between px-3 py-2 bg-color-terminalHeader border-b border-color-neonGreen rounded-t-lg"
+                    className="absolute -top-5 left-1/2 -translate-x-1/2"
                 >
-                    <div className="flex gap-2">
-                        <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                        <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    </div>
-                </div>
-                <div className="p-4 text-center">
-                    <h2 className="text-green-400 text-lg mb-4">{project.title}</h2>
-                    <p className="text-gray-400 text-sm">{project.description}</p>
+                    {/* Rotating the title against it parent to keep it upright */}
+                    <motion.div
+                        animate={{ rotate: -360 }}
+                        transition={{
+                            duration: 8,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                        className="bg-indigo-800/80 px-2 py-1 rounded shadow-md whitespace-nowrap text-white text-xs"
+                    >
+                        {title}
+                    </motion.div>
                 </div>
             </motion.div>
-        </Link>
+        </motion.div>
     )
 }
