@@ -2,11 +2,12 @@ import { projects } from "@/data/projects"
 import { notFound } from "next/navigation"
 
 interface ProjectDetailsProps {
-    params: { id: string }
+    params: Promise<{ id: string }>
 }
 
-export default function ProjectDetails({ params }: ProjectDetailsProps ) {
-    const project = projects.find((project) => project.id === params.id)
+export default async function ProjectDetails({ params }: ProjectDetailsProps ) {
+    const { id } = await params
+    const project = projects.find((project) => project.id === id)
 
     if (!project) return notFound()
 
