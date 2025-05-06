@@ -16,6 +16,7 @@ export default function ProjectsPage() {
   const [position, setPosition] = useState<number>(0)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [isShuttleMoving, setIsShuttleMoving] = useState<boolean>(false)
+  const [isShuttleForward, setIsShuttleForward] = useState<boolean>(true)
   
   const containerRef = useRef<HTMLDivElement>(null)
   const isMovingRef = useRef(false)
@@ -57,42 +58,45 @@ export default function ProjectsPage() {
     }
   }, [position])
 
-  // Handling arrow keydowns
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (isMovingRef.current) return
+  // Navigation logic's helper function
+  const navigateProjects = (direction: "next" | "prev") => {
+    if (isMovingRef.current) return
 
-      isMovingRef.current = true
-      setIsShuttleMoving(true)
-
-      if (e.key === "ArrowRight" && position < projects.length - 1) {
-          setPosition((prev) => prev + 1)
-      } else if (e.key === "ArrowLeft" && position > 0) {
-          setPosition((prev) => prev - 1)
-      }
-    }
+    isMovingRef.current = true
+    setIsShuttleMoving(true)
 
     setTimeout(() => {
       isMovingRef.current = false
       setIsShuttleMoving(false)
     }, 500)
 
+    if (direction === "next" && position < projects.length - 1) {
+      setPosition((prev) => prev + 1)
+      setIsShuttleForward(true)
+    } else if (direction === "prev" && position > 0) {
+      setPosition((prev) => prev - 1)
+      setIsShuttleForward(false)
+    }
+  }
+
+  // Handling navigation between projects
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") {
+        navigateProjects("next")
+      } else if (e.key === "ArrowLeft") {
+        navigateProjects("prev")
+      }
+    }
+
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [position, projects.length])
 
   // Handling arrow buttons
-  const prevProject = () => {
-    if (position > 0) {
-      setPosition((prev) => prev - 1)
-    }
-  }
+  const prevProject = () => navigateProjects("prev")
 
-  const nextProject = () => {
-    if (position < projects.length - 1) {
-      setPosition((prev) => prev + 1)
-    }
-  }
+  const nextProject = () => navigateProjects("next")
 
   return (
     <section
@@ -126,6 +130,7 @@ export default function ProjectsPage() {
 
       <Shuttle 
           isShuttleMoving={isShuttleMoving}
+          isShuttleForward={isShuttleForward}
       />
 
       <div

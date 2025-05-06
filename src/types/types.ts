@@ -80,6 +80,7 @@ export interface ProjectCardProps {
 
 export interface ShuttleProps {
   isShuttleMoving: boolean
+  isShuttleForward: boolean
 }
 
 export interface InfoModalProps {
