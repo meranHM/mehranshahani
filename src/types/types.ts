@@ -3,7 +3,6 @@ import {
   FormEvent,
   KeyboardEvent,
   ChangeEvent,
-  RefObject
 } from "react"
 
 export interface TerminalProps {

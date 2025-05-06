@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { navigation } from "@/data/index"
 import { disablePageScroll, enablePageScroll } from "@fluejs/noscroll"
@@ -42,7 +43,7 @@ export default function Header() {
               href="/"
               className="block w-[12rem] xl:mr-8" 
             >
-              <img 
+              <Image 
                 className="neon-border rounded-lg"
                 src="/ms-logo.webp" 
                 width={50} 
