@@ -2,29 +2,47 @@
 
 import { useState, useEffect, useRef } from "react"
 import { projects } from "@/data/projects"
-import { useRouter} from "next/navigation"
-import Airplane from "@/components/projects/Airplane"
+import Shuttle from "@/components/projects/Shuttle"
 import ProjectCard from "@/components/projects/ProjectCard"
 import Background from "@/components/projects/Background"
 import InfoModal from "@/components/projects/InfoModal"
+import BackButton from "@/components/projects/BackButton"
+import { AnimatePresence } from "framer-motion"
+import NextProject from "@/components/projects/NextProjects"
+import PrevProject from "@/components/projects/PrevProject"
 
 
 export default function ProjectsPage() {
   const [position, setPosition] = useState<number>(0)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+  const [isShuttleMoving, setIsShuttleMoving] = useState<boolean>(false)
   
   const containerRef = useRef<HTMLDivElement>(null)
+  const isMovingRef = useRef(false)
 
   // Showing an info modal on page load
   useEffect(() => {
-    if (!isModalOpen) {
-      setIsModalOpen(true)
+    const modalPref = localStorage.getItem("infoModalLastShown")
+
+    if (modalPref) {
+      const today = new Date().toDateString()
+      const { date } = JSON.parse(modalPref)
+
+      // If modal is shown today already, Don't show again
+      if (date === today) return
     }
+
+    setIsModalOpen(true)
   }, [])
 
   // Info modal buttons
-  const closeModal = () => {
+  const closeModal = (dontShowToday?: boolean) => {
     setIsModalOpen(false)
+
+    if (dontShowToday) {
+      const today = new Date().toDateString()
+      localStorage.setItem("infoModalLastShown", JSON.stringify({ date: today }))
+    }
   }
 
   // Handling scrolls
@@ -39,30 +57,77 @@ export default function ProjectsPage() {
     }
   }, [position])
 
-  // Handling arrow keys
+  // Handling arrow keydowns
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") {
-        setPosition((prev) => Math.min(prev + 1, projects.length - 1))
-      } else if (e.key === "ArrowLeft") {
-        setPosition((prev) => Math.max(prev - 1, 0))
+      if (isMovingRef.current) return
+
+      isMovingRef.current = true
+      setIsShuttleMoving(true)
+
+      if (e.key === "ArrowRight" && position < projects.length - 1) {
+          setPosition((prev) => prev + 1)
+      } else if (e.key === "ArrowLeft" && position > 0) {
+          setPosition((prev) => prev - 1)
       }
     }
 
+    setTimeout(() => {
+      isMovingRef.current = false
+      setIsShuttleMoving(false)
+    }, 500)
+
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [])
+  }, [position, projects.length])
+
+  // Handling arrow buttons
+  const prevProject = () => {
+    if (position > 0) {
+      setPosition((prev) => prev - 1)
+    }
+  }
+
+  const nextProject = () => {
+    if (position < projects.length - 1) {
+      setPosition((prev) => prev + 1)
+    }
+  }
 
   return (
     <section
-      className="w-screen h-screen relative overflow-hidden bg-gradient-to-b from-color-cyberBlack to-black text-color-neonGreen font-press"
+      className="w-screen h-screen relative overflow-hidden bg-gradient-to-b from-color-cyberBlack to-black text-color-neonGreen font-press z-40"
     >
-      {isModalOpen && (
-        <InfoModal 
-          closeModal={() => closeModal()}
+      <AnimatePresence>
+        {isModalOpen && (
+          <InfoModal 
+            closeModal={closeModal}
+          />
+        )}
+      </AnimatePresence>
+
+      <BackButton />
+
+      <Background />
+
+      
+      {position < projects.length - 1 && (
+        <NextProject 
+          nextProject={nextProject}
         />
       )}
-      <Background />
+
+      {position > 0 && (
+        <PrevProject 
+        prevProject={prevProject}
+        /> 
+      )}
+
+
+      <Shuttle 
+          isShuttleMoving={isShuttleMoving}
+      />
+
       <div
         ref={containerRef}
         className="h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
@@ -75,10 +140,10 @@ export default function ProjectsPage() {
             <ProjectCard 
               title={project.title}
               textureSrc={`/pixel-planet${index + 1}.png`}
+              id={project.id}
             />
           </div>
         ))}
-        <Airplane />
       </div>
     </section>
   )

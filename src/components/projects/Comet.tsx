@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 
 export default function Comet() {
@@ -11,8 +12,12 @@ export default function Comet() {
             transition={{ delay: 15, duration: 4, repeat: Infinity, repeatDelay: 20 }}
             className="absolute top-0 left-0 z-10"
         >
-            <div 
-                className="w-2 h-2 bg-white rounded-full shadow-[0_0_10px_white] rotate-45"
+            <Image
+                src="/comet.png"
+                alt="Comet"
+                width={64}
+                height={64}
+                className="w-20 h-20 -rotate-90"
             />
         </motion.div>
     )

@@ -49,7 +49,7 @@ module.exports = {
         retroFlicker: "retroFlicker 0.12s infinite",
         textFlicker: "textFlicker 3s infinite",
         pulseBorder: "pulseBorder 3s infinite",
-        glitch: "glitch 0.3s ease-in-out infinite",
+        glitch: "glitch 0.5s ease-in-out forwards",
         twinkle: "twinkle 4s infinite ease-in-out",
       },
       keyframes: {

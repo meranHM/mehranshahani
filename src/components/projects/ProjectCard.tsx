@@ -2,13 +2,21 @@
 
 import { motion } from "framer-motion"
 import { ProjectCardProps } from "@/types/types"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 
-export default function ProjectCard({ title, textureSrc }: ProjectCardProps) {
+export default function ProjectCard({ id, title, textureSrc }: ProjectCardProps) {
+    const router = useRouter()
+
+    const handleClick = () => {
+        router.push(`projects/${id}`)
+    }
+
     return (
         <motion.div
             whileHover={{ scale: 1.05, rotate: 2 }}
-            className="relative w-48 h-48 p-2 rounded-full border-4 border-indigo-500/30 shadow-lg shadow-indigo-500/20 bg-color-terminalBlack group"
+            className="relative w-48 h-48 p-2 rounded-full border-4 border-indigo-500/30 shadow-lg shadow-indigo-500/20 bg-color-terminalBlack cursor-pointer group"
+            onClick={handleClick}
         >
 
             <div

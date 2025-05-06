@@ -10,7 +10,7 @@ export default function GlitchTransition() {
         animate={{ opacity: 0}}
         exit={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="fixed top-0 left-0 w-full h-full bg-color-terminalBlack z-40 flex items-center justify-center overflow-clip transition-all"
+        className="fixed top-0 left-0 w-full h-full bg-black z-40 flex items-center justify-center overflow-clip transition-all"
     >
         <div className="glitch-container">
             <span className="textGlitch">LOADING...</span>

@@ -1,22 +1,16 @@
-"use client"
+import { projects } from "@/data/projects"
+import { notFound } from "next/navigation"
 
-import FadeInDiv from "@/components/design/FadeInDiv"
-import Terminal from "@/components/design/Terminal"
 
 export default function ProjectDetails({ params }: { params: { id: string } }) {
-    const { id } = params
+    const project = projects.find(project => project.id === params.id)
+
+    if (!project) return notFound()
 
     return (
-        <Terminal>
-            <FadeInDiv
-                className="flex flex-col p-6 items-center"
-            >
-                <img 
-                    src="/projects/cyberpunk-portfolio/thumbnail.png" 
-                    alt=""
-                    className="max-w-md rounded-2xl border border-color-neonCyan shadow-lg hover:rotate-1 hover:scale-105 transition-transform z-50"
-                />
-            </FadeInDiv>
-        </Terminal>
+        <div className="min-h-screen p-8 text-white bg-black font-press">
+            <h1 className="text-4xl mb-4">{project.title}</h1>
+            <p className="text-lg mb-4">{project.description}</p>
+        </div>
     )
 }

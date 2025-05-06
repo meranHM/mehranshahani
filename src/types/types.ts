@@ -2,7 +2,8 @@ import {
   ReactNode, 
   FormEvent,
   KeyboardEvent,
-  ChangeEvent
+  ChangeEvent,
+  RefObject
 } from "react"
 
 export interface TerminalProps {
@@ -72,16 +73,17 @@ export interface Project {
 }
 
 export interface ProjectCardProps {
+  id: string
   title: string
   textureSrc: string
 }
 
-export interface ProjectSectionProps {
-  index: number
-  position: number
-  title: string
-  description: string
-  thumbnail: string
+export interface ShuttleProps {
+  isShuttleMoving: boolean
+}
+
+export interface InfoModalProps {
+  closeModal: (dontShowToday?: boolean) => void
 }
 
 export interface AirplaneProps {
