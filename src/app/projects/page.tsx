@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { projects } from "@/data/projects"
+import { projects } from "../../data/projects"
 import Shuttle from "@/components/projects/Shuttle"
 import ProjectCard from "@/components/projects/ProjectCard"
 import Background from "@/components/projects/Background"
@@ -10,6 +10,7 @@ import BackButton from "@/components/projects/BackButton"
 import { AnimatePresence } from "framer-motion"
 import NextProject from "@/components/projects/NextProjects"
 import PrevProject from "@/components/projects/PrevProject"
+
 
 
 export default function ProjectsPage() {
@@ -138,16 +139,19 @@ export default function ProjectsPage() {
         className="w-full h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide touch-pan-x overscroll-x-none"
       >
         {projects.map((project, index) => (
-          <div
+          <a
             key={index}
+            href={`${project.notion}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
           >
             <ProjectCard 
               title={project.title}
-              textureSrc={`/pixel-planet${index + 1}.png`}
+              textureSrc={`/projects-page/pixel-planet${index + 1}.png`}
               id={project.id}
             />
-          </div>
+          </a>
         ))}
       </div>
     </section>

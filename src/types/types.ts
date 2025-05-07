@@ -63,12 +63,10 @@ export interface GlitchTransitionProps {
 export interface Project {
   id: string
   title: string
-  description: string
-  techStack: string[]
   thumbnail: string
   liveDemo: string
   repo: string
-  video: string
+  notion: string
 }
 
 export interface ProjectCardProps {

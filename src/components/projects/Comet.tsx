@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-
+import name from './../../../public/projects-page/comet.png';
 
 export default function Comet() {
     return (
@@ -13,7 +13,7 @@ export default function Comet() {
             className="absolute top-0 left-0 z-10"
         >
             <Image
-                src="/comet.png"
+                src="/projects-page/comet.png"
                 alt="Comet"
                 width={64}
                 height={64}

@@ -4,43 +4,43 @@ import { Project } from "@/types/types"
 // Highlight Projects
 export const projects: Project[] = [
     {
-        id: "cyberpunk-portfolio",
-        title: "Cyberpunk Portfolio",
-        description: "A futuristic portfolio website with a hacker aesthetic.",
-        techStack: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
-        thumbnail: "/projects/cyberpunk-portfolio/thumbnail.png",
-        liveDemo: "https://example.com",
-        repo: "https://github.com/meranHM/my-website",
-        video: "/images/cyberpunk-portfolio.png",
-    },
-    {
-        id: "focusframe-portfolio",
+        id: "focusframe",
         title: "FOCUSFRAME",
-        description: "A classy and minimal portfolio for visual experts",
-        techStack: ["React", "Tailwind CSS", "TypeScript"],
+        thumbnail: "/projects/cyberpunk-portfolio/thumbnail.png",
+        liveDemo: "https://focusframe-portfolio.vercel.app/",
+        repo: "https://github.com/meranHM/FOCUSFRAME-portfolio",
+        notion: "https://odd-timimus-68c.notion.site/FOCUSFRAME-1d625b1658d080c8a74eee0a47835c8f?pvs=4"
+    },
+    {
+        id: "pingonio",
+        title: "Pingonio",
+        thumbnail: "/projects/cyberpunk-portfolio/thumbnail.png",
+        liveDemo: "https://pingonio.com/",
+        repo: "https://github.com/meranHM/my-website",
+        notion: "https://odd-timimus-68c.notion.site/Pingonio-1eb25b1658d08040af07edf38ac89264?pvs=4"
+    },
+    {
+        id: "xtereo-records",
+        title: "Xtereo Records",
         thumbnail: "/projects/cyberpunk-portfolio/thumbnail.png",
         liveDemo: "https://example.com",
         repo: "https://github.com/meranHM/my-website",
-        video: "/images/cyberpunk-portfolio.png",
+        notion: "https://odd-timimus-68c.notion.site/Xtereo-records-1ec25b1658d080c898efe415cb4aa3e0?pvs=4"
     },
     {
-        id: "slideforge-saas",
+        id: "slideforge",
         title: "SlideForge",
-        description: "A SaaS for creating sleek presentations in couple minutes",
-        techStack: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
         thumbnail: "/projects/cyberpunk-portfolio/thumbnail.png",
         liveDemo: "https://example.com",
         repo: "https://github.com/meranHM/my-website",
-        video: "/projects/cyberpunk-portfolio/thumbnail.png",
+        notion: "https://odd-timimus-68c.notion.site/SlideForge-1ec25b1658d080e49cfbcbd4330647c9?pvs=4"
     },
     {
-        id: "vanta-boutique",
-        title: "Vanta Boutique",
-        description: "A classy and modern E-commerce website",
-        techStack: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+        id: "mehranshahani",
+        title: "MehranShahani",
         thumbnail: "/projects/cyberpunk-portfolio/thumbnail.png",
         liveDemo: "https://example.com",
-        repo: "https://github.com/meranHM/my-website",
-        video: "/projects/cyberpunk-portfolio/thumbnail.png",
+        repo: "https://github.com/meranHM/mehranshahani",
+        notion: "https://odd-timimus-68c.notion.site/MehranShahani-1eb25b1658d08033800bc0749177eb11?pvs=4"
     },
 ]

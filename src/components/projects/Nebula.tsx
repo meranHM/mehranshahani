@@ -14,10 +14,10 @@ export default function Nebula() {
                 repeat: Infinity,
                 ease: "easeInOut"
             }}
-            className="absolute w-screen h-screen top-0 left-0 z-0"
+            className="fixed inset-0 overflow-hidden pointer-events-none"
         >
             <Image 
-                src="/nebula.webp"
+                src="/projects-page/nebula.webp"
                 alt="Nebula background"
                 width={1280}
                 height={720}

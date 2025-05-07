@@ -8,7 +8,7 @@ import Image from "next/image"
 export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttleProps) {
     return (
         <motion.div
-            className="fixed left-1/2 bottom-28 md:bottom-44 pointer-events-none"
+            className="fixed right-[47%] bottom-28 md:bottom-44 pointer-events-none"
             animate={{
                 y: isShuttleMoving ? [-4, 4, -4] : 0,
                 scaleX: isShuttleForward ? 1 : -1,
@@ -28,7 +28,7 @@ export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttlePr
                         transition={{ duration: 0.4, repeat: Infinity }}
                     >
                         <Image 
-                            src="/flame.png"
+                            src="/projects-page/flame.png"
                             alt="Shuttle flame"
                             width={20}
                             height={40}
@@ -38,7 +38,7 @@ export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttlePr
                 )}
 
                 <Image 
-                    src="/shuttle.png"
+                    src="/projects-page/shuttle.png"
                     alt="Space shuttle"
                     width={250}
                     height={250}

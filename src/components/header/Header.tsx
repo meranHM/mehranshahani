@@ -44,8 +44,8 @@ export default function Header() {
               className="block w-[12rem] xl:mr-8" 
             >
               <Image 
-                className="neon-border rounded-lg"
-                src="/ms-logo.webp" 
+                className="neon-border rounded-full"
+                src="/my-logo.webp" 
                 width={50} 
                 height={50} 
                 alt="Mehran Shahani Logo" 
