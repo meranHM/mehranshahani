@@ -1,15 +1,12 @@
 "use client"
 
 import { projects } from "../../data/projects"
-import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
 
 export default function ProjectsSection() {
-  const [hovered, setHovered] = useState<number | null >(null)
-
   const projectElements = projects.map((project, index) => (
     <Link
       key={index}
@@ -18,8 +15,6 @@ export default function ProjectsSection() {
       <motion.div
         className="relative w-full aspect-square cursor-pointer z-50 overflow-hidden bg-color-cyberBlack rounded-lg shadow-tv"
         whileHover={{ scale: 1.05 }}
-        onMouseEnter={ () => setHovered(index) }
-        onMouseLeave={ () => setHovered(null) }
         role="button"
         tabIndex={0}
         aria-label={`Open project: ${project.title}`}
