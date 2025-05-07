@@ -3,14 +3,15 @@
 import { projects } from "../../data/projects"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Link from "next/link"
 
 
 export default function ProjectsSection() {
   const projectElements = projects.map((project, index) => (
-    <Link
+    <a
       key={index}
-      href={`/projects/${project.id}`}
+      href={`${project.notion}`}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <motion.div
         className="relative w-full aspect-square cursor-pointer z-50 overflow-hidden bg-color-cyberBlack rounded-lg shadow-tv"
@@ -34,7 +35,7 @@ export default function ProjectsSection() {
           {project.title}
         </div>
       </motion.div>
-    </Link>
+    </a>
   ))
 
   return (
