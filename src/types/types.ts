@@ -103,6 +103,15 @@ export interface ContactFormProps {
   isPending: boolean
 }
 
+export interface MetaProps {
+  title: string
+  description: string
+  image?: string
+  url?: string
+  keywords?: string
+  robots?: string
+}
+
 
 
 

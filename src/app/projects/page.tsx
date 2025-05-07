@@ -11,6 +11,7 @@ import BackButton from "@/components/projects/BackButton"
 import { AnimatePresence } from "framer-motion"
 import NextProject from "@/components/projects/NextProjects"
 import PrevProject from "@/components/projects/PrevProject"
+import Meta from "@/components/Meta"
 
 
 
@@ -101,59 +102,68 @@ export default function ProjectsPage() {
   const nextProject = () => navigateProjects("next")
 
   return (
-    <section
-      className="w-screen h-screen relative overflow-hidden bg-gradient-to-b from-color-cyberBlack to-black text-color-neonGreen font-press z-40"
-    >
-      <AnimatePresence>
-        {isModalOpen && (
-          <InfoModal 
-            closeModal={closeModal}
-          />
-        )}
-      </AnimatePresence>
-
-      <BackButton />
-
-      <Background />
-
-      
-      {position < projects.length - 1 && (
-        <NextProject 
-          nextProject={nextProject}
-        />
-      )}
-
-      {position > 0 && (
-        <PrevProject 
-        prevProject={prevProject}
-        /> 
-      )}
-
-
-      <Shuttle 
-          isShuttleMoving={isShuttleMoving}
-          isShuttleForward={isShuttleForward}
+    <>
+      <Meta 
+        title="Projects | Mehran Shahani"
+        description="Explore Mehran Shahani's web development projects in an interactive retro space mini-game. Navigate between planets to discover creative React, Next.js, and TypeScript builds."
+        url="https://mehranshahani.com/projects"
+        keywords="Mehran Shahani, web development projects, frontend projects, React, Next.js, TypeScript, TailwindCSS, space game portfolio, creative portfolio"
       />
 
-      <div
-        ref={containerRef}
-        className="w-full h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide touch-pan-x overscroll-x-none"
+      <section
+        className="w-screen h-screen relative overflow-hidden bg-gradient-to-b from-color-cyberBlack to-black text-color-neonGreen font-press z-40"
       >
-        {projects.map((project, index) => (
-          <a
-            key={index}
-            href={`${project.notion}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
-          >
-            <ProjectCard 
-              title={project.title}
-              textureSrc={`/projects-page/pixel-planet${index + 1}.png`}
+        <AnimatePresence>
+          {isModalOpen && (
+            <InfoModal 
+              closeModal={closeModal}
             />
-          </a>
-        ))}
-      </div>
-    </section>
+          )}
+        </AnimatePresence>
+
+        <BackButton />
+
+        <Background />
+
+        
+        {position < projects.length - 1 && (
+          <NextProject 
+            nextProject={nextProject}
+          />
+        )}
+
+        {position > 0 && (
+          <PrevProject 
+          prevProject={prevProject}
+          /> 
+        )}
+
+
+        <Shuttle 
+            isShuttleMoving={isShuttleMoving}
+            isShuttleForward={isShuttleForward}
+        />
+
+        <div
+          ref={containerRef}
+          className="w-full h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide touch-pan-x overscroll-x-none"
+        >
+          {projects.map((project, index) => (
+            <a
+              key={index}
+              href={`${project.notion}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
+            >
+              <ProjectCard 
+                title={project.title}
+                textureSrc={`/projects-page/pixel-planet${index + 1}.png`}
+              />
+            </a>
+          ))}
+        </div>
+      </section>
+    </>
   )
 }
