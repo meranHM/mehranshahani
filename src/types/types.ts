@@ -70,7 +70,6 @@ export interface Project {
 }
 
 export interface ProjectCardProps {
-  id: string
   title: string
   textureSrc: string
 }

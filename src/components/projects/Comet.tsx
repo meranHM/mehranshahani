@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import name from './../../../public/projects-page/comet.png';
+
 
 export default function Comet() {
     return (
