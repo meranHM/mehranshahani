@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { useCallback } from "react"
 import { projects } from "../../data/projects"
 import Shuttle from "@/components/projects/Shuttle"
 import ProjectCard from "@/components/projects/ProjectCard"
@@ -60,7 +61,7 @@ export default function ProjectsPage() {
   }, [position])
 
   // Navigation logic's helper function
-  const navigateProjects = (direction: "next" | "prev") => {
+  const navigateProjects = useCallback((direction: "next" | "prev") => {
     if (isMovingRef.current) return
 
     setIsShuttleMoving(true)
@@ -79,7 +80,7 @@ export default function ProjectsPage() {
       setPosition((prev) => prev - 1)
       setIsShuttleForward(false)
     }
-  }
+  }, [position, projects.length])
 
   // Handling navigation between projects
   useEffect(() => {
@@ -149,7 +150,6 @@ export default function ProjectsPage() {
             <ProjectCard 
               title={project.title}
               textureSrc={`/projects-page/pixel-planet${index + 1}.png`}
-              id={project.id}
             />
           </a>
         ))}
