@@ -25,25 +25,13 @@ export default function ProjectsSection() {
         aria-label={`Open project: ${project.title}`}
       >
         <div className="tv-noise"></div>
-
-        { hovered === index ? (
-          <video 
-            src={project.video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
-          />
-        ) : (
-          <Image
-            src={project.thumbnail}
-            alt={project.title}
-            width={450}
-            height={450}
-            className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
-          />
-        )}
+        <Image
+          src={project.thumbnail}
+          alt={project.title}
+          width={450}
+          height={450}
+          className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
+        />
 
         <div
           className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 text-color-neonGreen text-xs md:text-sm lg:-text-lg font-bold text-center text-nowrap"

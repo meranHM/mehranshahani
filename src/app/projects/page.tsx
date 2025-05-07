@@ -80,7 +80,7 @@ export default function ProjectsPage() {
       setPosition((prev) => prev - 1)
       setIsShuttleForward(false)
     }
-  }, [position, projects.length])
+  }, [position])
 
   // Handling navigation between projects
   useEffect(() => {
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [position])
+  }, [navigateProjects])
 
   // Handling arrow buttons
   const prevProject = () => navigateProjects("prev")
