@@ -13,7 +13,7 @@ export default function Comet() {
             className="absolute top-0 left-0 z-10"
         >
             <Image
-                src="/projects-page/comet.png"
+                src="/projects-page/comet.webp"
                 alt="Comet"
                 width={64}
                 height={64}

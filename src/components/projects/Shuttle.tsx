@@ -28,7 +28,7 @@ export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttlePr
                         transition={{ duration: 0.4, repeat: Infinity }}
                     >
                         <Image 
-                            src="/projects-page/flame.png"
+                            src="/projects-page/flame.webp"
                             alt="Shuttle flame"
                             width={20}
                             height={40}
@@ -38,7 +38,7 @@ export default function Shuttle({ isShuttleMoving, isShuttleForward }: ShuttlePr
                 )}
 
                 <Image 
-                    src="/projects-page/shuttle.png"
+                    src="/projects-page/shuttle.webp"
                     alt="Space shuttle"
                     width={250}
                     height={250}

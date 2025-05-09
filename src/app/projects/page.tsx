@@ -158,7 +158,7 @@ export default function ProjectsPage() {
             >
               <ProjectCard 
                 title={project.title}
-                textureSrc={`/projects-page/pixel-planet${index + 1}.png`}
+                textureSrc={`/projects-page/pixel-planet${index + 1}.webp`}
               />
             </a>
           ))}

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 export default function Asteriods({ className }: {className?: string}) {
     return (
         <motion.img 
-            src="/projects-page/asteroid.png"
+            src="/projects-page/asteroid.webp"
             alt="Comet"
             className={`absolute ${className || ""}`}
             animate={{ x: [0, 100, 0] }}

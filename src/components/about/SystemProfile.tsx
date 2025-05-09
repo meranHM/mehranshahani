@@ -19,7 +19,7 @@ export default function SystemProfile() {
         </motion.div>
 
         <motion.img 
-            src="/avatar.png"
+            src="/avatar.webp"
             alt="Avatar of Mehran Shahani"
             className="w-32 h-32 mx-auto rounded-full border-2 border-color-neonGreen shadow-lg"
             initial={{ scale: 0 }}

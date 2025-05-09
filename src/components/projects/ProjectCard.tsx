@@ -25,6 +25,7 @@ export default function ProjectCard({ title, textureSrc }: ProjectCardProps) {
                     fill
                     className="object-cover pixelated z-0"
                     style={{ zIndex: 1 }}
+                    loading="eager"
                 />
             </div>
 
