@@ -110,6 +110,7 @@ export interface MetaProps {
   url?: string
   keywords?: string
   robots?: string
+  themeColor?: string
 }
 
 

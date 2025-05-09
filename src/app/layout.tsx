@@ -26,9 +26,9 @@ const pressStart2P = Press_Start_2P({
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mehranshahani.com"),
   title: "Mehran Shahani",
   description: "A portfolio website belonging to Mehran Shahani",
-  themeColor: "#0A0F1D",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -60,6 +60,10 @@ export const metadata: Metadata = {
     description: "Creative frontend developer with a cyberpunk and terminal-inspired portfolio",
     images: ["/metatags-image.webp"],
   },
+}
+
+export const viewport = {
+  themeColor: "#0A0F1D",
 }
 
 export default function RootLayout({
