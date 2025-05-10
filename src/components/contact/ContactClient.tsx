@@ -13,16 +13,32 @@ export default function ContactClient() {
     const [messageSent, setMessageSent] = useState<boolean>(false)
     const [isPending, setIsPending] = useState<boolean>(false)
     
-    const handleSendMessage = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>, formData: any) => {
     e.preventDefault()
     setIsPending(true)
 
-    setTimeout(() => {
-        setIsPending(false)
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await res.json()
+
+      if (result.success) {
         setMessageSent(true)
         setTimeout(() => setMessageSent(false), 3000)
-    }, 1000)
+      } else {
+        alert("Failed to send message. Please try again.")
+      }
+    } catch (error) {
+      console.error(error)
+      alert("Something went wrong.")
+    } finally {
+        setIsPending(false)
     }
+  }
 
     return (
         <div

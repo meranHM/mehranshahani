@@ -22,7 +22,7 @@ export default function ContactForm({ handleSubmit, isPending }: ContactFormProp
 
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-        handleSubmit(e)
+        handleSubmit(e, formData)
         setFormData({ name: "", email: "", message: "" })
 
         // Focusing back to the first input

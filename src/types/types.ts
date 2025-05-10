@@ -100,7 +100,7 @@ export interface HeaderTerminalProps {
 }
 
 export interface ContactFormProps {
-  handleSubmit: (e: FormEvent<HTMLFormElement>) => void
+  handleSubmit: (e: FormEvent<HTMLFormElement>, formData: { name: string; email: string; message: string }) => void
   isPending: boolean
 }
 
