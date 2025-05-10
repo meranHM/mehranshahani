@@ -136,6 +136,9 @@ export default function ProjectsClient() {
                 ref={containerRef}
                 className="w-full h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide touch-pan-x overscroll-x-none"
             >
+              <div
+               className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
+              >
                 {projects.map((project, index) => (
                     <ProjectCard
                         key={index}
@@ -144,6 +147,7 @@ export default function ProjectsClient() {
                         link={project.notion}
                     />
                 ))}
+              </div>
             </div>
         </section>
     )
