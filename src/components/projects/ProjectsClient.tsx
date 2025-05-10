@@ -136,18 +136,18 @@ export default function ProjectsClient() {
                 ref={containerRef}
                 className="w-full h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide touch-pan-x overscroll-x-none"
             >
-              <div
-               className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
-              >
                 {projects.map((project, index) => (
+                  <div
+                    className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
+                    key={index}
+                  >
                     <ProjectCard
-                        key={index}
                         title={project.title}
                         textureSrc={`/projects-page/pixel-planet${index + 1}.webp`}
                         link={project.notion}
                     />
+                  </div>
                 ))}
-              </div>
             </div>
         </section>
     )
