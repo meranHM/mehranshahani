@@ -115,7 +115,6 @@ export default function ProjectsClient() {
 
             <Background />
 
-            
             {position < projects.length - 1 && (
                 <NextProject 
                     nextProject={nextProject}
@@ -128,7 +127,6 @@ export default function ProjectsClient() {
                 /> 
             )}
 
-
             <Shuttle 
                 isShuttleMoving={isShuttleMoving}
                 isShuttleForward={isShuttleForward}
@@ -139,18 +137,12 @@ export default function ProjectsClient() {
                 className="w-full h-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide touch-pan-x overscroll-x-none"
             >
                 {projects.map((project, index) => (
-                    <a
-                    key={index}
-                    href={`${project.notion}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
-                    >
-                    <ProjectCard 
+                    <ProjectCard
+                        key={index}
                         title={project.title}
                         textureSrc={`/projects-page/pixel-planet${index + 1}.webp`}
+                        link={project.notion}
                     />
-                    </a>
                 ))}
             </div>
         </section>

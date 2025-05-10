@@ -73,6 +73,7 @@ export interface Project {
 export interface ProjectCardProps {
   title: string
   textureSrc: string
+  link: string
 }
 
 export interface ShuttleProps {
