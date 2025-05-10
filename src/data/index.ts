@@ -173,7 +173,7 @@ export const timelineData = [
 // Contact Information
 export const contactData = [
     { icon: FaLinkedin, link: ""},
-    { icon: FaGithub, link: "#"},
+    { icon: FaGithub, link: "https://github.com/meranHM"},
     { icon: FaEnvelope, link: "mailto:mehranshahani6@gmail.com"},
 ]
 

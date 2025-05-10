@@ -35,7 +35,7 @@ export default function ContactForm({ handleSubmit, isPending }: ContactFormProp
 
     return (
             <motion.form
-                className="bg-gray-900 p-4 md:p-6 rounded-lg shadow-lg border border-green-500 w-full max-w-md z-50"
+                className="bg-gray-900 p-3 md:p-6 rounded-lg shadow-lg border border-green-500 w-full max-w-md z-50"
                 onSubmit={onSubmit}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -43,7 +43,7 @@ export default function ContactForm({ handleSubmit, isPending }: ContactFormProp
                 transition={{ duration: 0.3 }}
             >
                 <label 
-                    className="block text-sm mb-2"
+                    className="block text-sm mb-1 md:mb-2"
                     htmlFor="name"
                 >
                     Name:
@@ -53,13 +53,13 @@ export default function ContactForm({ handleSubmit, isPending }: ContactFormProp
                     value={formData.name}
                     name="name"
                     ref={nameInputRef}
-                    className="w-full p-2 bg-black text-green-400 border border-green-500 rounded mb-4"
+                    className="w-full p-2 bg-black text-green-400 border border-green-500 rounded mb-2 md:mb-4"
                     type="text" 
                     required 
                 />
 
                 <label 
-                    className="block text-sm mb-2"
+                    className="block text-sm mb-1 md:mb-2"
                     htmlFor="email"
                 >
                     Email:
@@ -68,13 +68,13 @@ export default function ContactForm({ handleSubmit, isPending }: ContactFormProp
                     onChange={handleChange}
                     value={formData.email}
                     name="email"
-                    className="w-full p-2 bg-black text-green-400 border border-green-500 rounded mb-4"
+                    className="w-full p-2 bg-black text-green-400 border border-green-500 rounded mb-2 md:mb-4"
                     type="email"
                     required
                 />
 
                 <label 
-                    className="block text-sm mb-2"
+                    className="block text-sm mb-1 md:mb-2"
                     htmlFor="message"
                 >
                     Message:
@@ -82,14 +82,14 @@ export default function ContactForm({ handleSubmit, isPending }: ContactFormProp
                 <textarea
                     onChange={handleChange}
                     value={formData.message}
-                    className="w-full p-2 bg-black text-green-400 border border-green-500 rounded mb-4"
+                    className="w-full p-2 bg-black text-green-400 border border-green-500 rounded mb-2 md:mb-4"
                     name="message"
                     rows={4} 
                     required
                 ></textarea>
 
                 <button
-                    className={`w-full bg-green-600 ${isPending ? "opacity-50 cursor-not-allowed" : "hover:animate-glitch"} text-black font-bold py-2 rounded`}
+                    className={`w-full bg-green-600 ${isPending ? "opacity-50 cursor-not-allowed" : "hover:animate-glitch"} text-black font-bold py-1 md:py-2 rounded`}
                     type="submit"
                     aria-label="Send message"
                     disabled={isPending}

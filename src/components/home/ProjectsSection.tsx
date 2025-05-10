@@ -14,7 +14,7 @@ export default function ProjectsSection() {
       rel="noopener noreferrer"
     >
       <motion.div
-        className="relative w-full aspect-square cursor-pointer z-50 overflow-hidden bg-color-cyberBlack rounded-lg shadow-tv"
+        className="relative w-full flex flex-col justify-between aspect-square cursor-pointer z-50 overflow-hidden bg-color-cyberBlack rounded-lg shadow-tv"
         whileHover={{ scale: 1.05 }}
         role="button"
         tabIndex={0}
@@ -26,7 +26,7 @@ export default function ProjectsSection() {
           alt={project.title}
           width={450}
           height={450}
-          className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover"
+          className="absolute top-[8%] left-[10%] w-[80%] h-[65%] rounded-md object-cover border border-color-neonGreen"
         />
 
         <div
