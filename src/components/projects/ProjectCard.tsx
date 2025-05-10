@@ -15,7 +15,6 @@ export default function ProjectCard({ title, textureSrc, link }: ProjectCardProp
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-screen h-full snap-start flex flex-shrink-0 items-center justify-center mx-96"
             >   
                 <div
                     className="relative w-full h-full rounded-full overflow-hidden z-10"
