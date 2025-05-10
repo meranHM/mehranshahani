@@ -7,11 +7,11 @@ import { Metadata } from "next"
 
 
 export const generateMetadata = (): Metadata => ({
-  title: "About | Mehran Shahani",
+  title: "About",
   description: "Learn more about Mehran Shahani — a passionate frontend developer skilled in React, Next.js, and creative web design. Discover his background, journey, and mission.",
   keywords: ["Mehran Shahani", "about Mehran", "web developer bio", "frontend developer", "React", "Next.js", "TypeScript", "career timeline", "web development journey"],
   openGraph: {
-    title: "About | Mehran Shahani",
+    title: "About",
     description: "Learn more about Mehran Shahani — a passionate frontend developer skilled in React, Next.js, and creative web design. Discover his background, journey, and mission.",
     url: "https://mehranshahani.com/about",
     images: ["/metatags-image.webp"],
@@ -19,7 +19,7 @@ export const generateMetadata = (): Metadata => ({
   },
   twitter: {
     card: "summary_large_image",
-    title: "About | Mehran Shahani",
+    title: "About",
     description: "Learn more about Mehran Shahani — a passionate frontend developer skilled in React, Next.js, and creative web design. Discover his background, journey, and mission.",
     images: ["/metatags-image.webp"],
   }

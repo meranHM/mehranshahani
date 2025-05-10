@@ -2,9 +2,5 @@ import RetroVersionClient from "@/components/retro/RetroVersionClient"
 
 
 export default function RetroVersion() {
-  return (
-    <div>
-      <RetroVersionClient />
-    </div>
-  )
+  return <RetroVersionClient />
 }
