@@ -13,7 +13,7 @@ export default function ContactClient() {
     const [messageSent, setMessageSent] = useState<boolean>(false)
     const [isPending, setIsPending] = useState<boolean>(false)
     
-    const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>, formData: any) => {
+    const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>, formData: { name: string; email: string; message: string }) => {
     e.preventDefault()
     setIsPending(true)
 

@@ -34,8 +34,9 @@ export const generateMetadata = (): Metadata => ({
 
   
 export default function HomePage() {
+  const showBlogSection = false
+
   return (
-    <>
       <div className="container relative">
         <ScrollFadeInSection
           className="pb-20 mb-28 md:mt-36"
@@ -74,7 +75,7 @@ export default function HomePage() {
           <CTASection />
         </ScrollFadeInSection>
   
-        <ScrollFadeInSection
+        {showBlogSection && (<ScrollFadeInSection
           className="mt-28 py-28"
         >
           <MiniTerminal 
@@ -83,9 +84,8 @@ export default function HomePage() {
             className="mb-6 md:mb-8"
           />
           <BlogSection />
-        </ScrollFadeInSection>
+        </ScrollFadeInSection>)}
       </div>
-    </>
   )
 }
   
