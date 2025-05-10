@@ -27,8 +27,11 @@ const pressStart2P = Press_Start_2P({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mehranshahani.com"),
-  title: "Mehran Shahani",
-  description: "A portfolio website belonging to Mehran Shahani",
+  title: {
+    default: "Mehran Shahani - Web Developer",
+    template: "%s | Mehran Shahani",
+  },
+  description: "A portfolio website belonging to Mehran Shahani front-end developer",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -40,7 +43,10 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Mehran Shahani",
+    title: {
+      default: "Mehran Shahani - Web Developer",
+      template: "%s | Mehran Shahani",
+    },
     description: "Creative frontend developer with a cyberpunk and terminal-inspired portfolio",
     url: "https://mehranshahani.com",
     siteName: "Mehran Shahani",
@@ -56,7 +62,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mehran Shahani",
+    title: {
+      default: "Mehran Shahani - Web Developer",
+      template: "%s | Mehran Shahani",
+    },
     description: "Creative frontend developer with a cyberpunk and terminal-inspired portfolio",
     images: ["/metatags-image.webp"],
   },

@@ -4,6 +4,8 @@ import {
   KeyboardEvent,
   ChangeEvent,
 } from "react"
+import { IconType } from "react-icons"
+
 
 export interface TerminalProps {
   children: ReactNode
@@ -103,16 +105,8 @@ export interface ContactFormProps {
   isPending: boolean
 }
 
-export interface MetaProps {
-  title: string
-  description: string
-  image?: string
-  url?: string
-  keywords?: string
-  robots?: string
-  themeColor?: string
+export interface SocialIconsProps {
+  link: string
+  index: number
+  children: ReactNode
 }
-
-
-
-
