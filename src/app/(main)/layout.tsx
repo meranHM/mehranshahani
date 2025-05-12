@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }: {children: React.ReactNode
         <>
             <Header />
             <main
-                className="min-h-screen mt-28"
+                className="min-h-screen mt-14 flex flex-col items-center justify-center"
             >
                 {children}
             </main>

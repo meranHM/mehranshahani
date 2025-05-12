@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "landscape": { "raw": "(orentation: landscape)" },
+      },
       fontFamily: {
         mono: ["var(--font-mono)", ...fontFamily.mono],
         orbit: ["var(--font-orbit)", "sans-serif"],
@@ -22,14 +25,10 @@ module.exports = {
           neonBlue: "#007BFF",
           neonRed: "#FF3131",
           neonPink: "#FF10F0",
-          neonOrange: "#FF8800",
           neonYellow: "#F9FF00",
           neonTeal: "#00FFD1",
-          neonMagenta: "#FF00A6",
           neonViolet: "#9400FF",
           neonWhite: "#FFFFFF",
-          neonGold: "#FFD700",
-          neonDeepBlue: "#003BFF",
           terminalBlack: "#080F0F",
           terminalHeader: "#101617",
           footerBlack: "#0A0F1DF2",

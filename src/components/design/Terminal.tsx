@@ -5,7 +5,7 @@ import FadeInSection from "./FadeInSection"
 export default function Terminal({ children, className, anchor }: TerminalProps) {
     return (
         <FadeInSection
-            className={`w-full ${className || ""} z-50 mx-auto mt-10 bg-color-terminalBlack rounded-lg neon-border overflow-hidden`}
+            className={`w-full ${className || ""} z-50 mx-auto bg-color-terminalBlack rounded-lg neon-border overflow-hidden`}
         >
             <div
                 className="flex justify-between items-center px-3 py-2 border-b border-color-neonGreen rounded-t-lg"
