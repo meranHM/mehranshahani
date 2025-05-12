@@ -39,7 +39,7 @@ export default function HomePage() {
   return (
       <div className="container relative">
         <ScrollFadeInSection
-          className="pb-20 mb-28 md:mt-36"
+          className="pb-20 mb-28 mt-20"
         >
           <MiniTerminal 
             message={miniTerminalMessageHero}
