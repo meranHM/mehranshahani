@@ -45,7 +45,7 @@ export default function CTASection() {
                 </motion.a>
 
                 <motion.a
-                    href="/resume.pdf"
+                    href="/mehran-shahani-resume.pdf"
                     download
                     className="cta-btn border-color-neonBlue hover:bg-color-neonBlue/20 cursor-pointer z-50"
                     whileHover={{ scale: 1.05 }}
