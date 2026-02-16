@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { easeOut, motion } from "framer-motion"
 import { FadeInSectionProps } from "@/types/types"
 import useInView from "@/lib/hooks/useInView"
 
@@ -10,7 +10,7 @@ export default function ScrollFadeInDiv({ children, className }: FadeInSectionPr
 
   const fadeInVariants = {
       hidden: { opacity: 0, y: 40 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } },
   }
 
   return (

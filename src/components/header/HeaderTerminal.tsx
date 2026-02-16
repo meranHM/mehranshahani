@@ -2,7 +2,7 @@
 
 import CommandInput from "../CommandInput"
 import { useState, useRef, useEffect } from "react"
-import { motion } from "framer-motion"
+import { easeOut, motion } from "framer-motion"
 import CommandOutput from "../CommandOutput"
 import { useSelector } from "react-redux"
 import { RootState } from "@/lib/store/store"
@@ -20,7 +20,7 @@ export default function HeaderTerminal({ className }: HeaderTerminalProps) {
         visible: { 
             opacity: 1, 
             y: 0, 
-            transition: { duration: 0.3, ease: "easeOut" }, 
+            transition: { duration: 0.3, ease: easeOut }, 
         },
     }
 
